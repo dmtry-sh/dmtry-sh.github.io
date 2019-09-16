@@ -731,3 +731,139 @@ nav.menu > .container--small {
 .benefit__item:hover > .hover-info {
 	visibility: visible;
 }
+
+
+/* Product */
+
+.product {
+	height: 625px;
+}
+
+.product__inner {
+	box-sizing: border-box;
+	height: 625px;
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 26px;
+	border: 8px solid #1b2160;
+	border-image: linear-gradient(140deg, #1a1a55, #2a86ff);
+	border-image-slice: 1;
+
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.product__info {
+	width: 544px;
+	padding-left: 95px;
+	padding-top: 45px;
+	padding-bottom: 78px;
+
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.product__info > .head {
+	color: #1a1a55;
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+.product__info > .comments {
+	width: 220px;
+	height: 20px;
+	text-align: right;
+	margin-top: 30px;
+	color: #2a86ff;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-size: 12px;
+}
+
+.product__info > .comments > a:visited {
+	color: #2a86ff;
+}
+
+.product__info > .info {
+	height: 245px;
+	margin-top: 20px;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-size: 13px;
+	line-height: 1.231;
+	color: #444;
+}
+
+.info__list {
+	list-style: none;
+}
+
+.info__list__item {
+	margin-bottom: 5px;
+}
+
+.info__list__item:last-child {
+	margin-bottom: 0;
+}
+
+.product__info > .price {
+	margin-top: 22px;
+}
+
+.product__info > .price > .current {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	color: #1a1a55;
+}
+
+.product__info > .price > .old {
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-size: 16px;
+	color: #444;
+	text-decoration: line-through;
+}
+
+.add {
+	width: 255px;
+	height: 47px;
+	margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.product__photo {
+	width: 540px;
+	margin-top: 45px;
+	margin-bottom: 78px;
+	padding-top: 45px;
+	padding-bottom: 78px;
+}
+
+.product__color {
+	width: 278px;
+	margin-top: 45px;
+	margin-bottom: 78px;
+	padding-top: 45px;
+	padding-bottom: 78px;
+}
