@@ -949,6 +949,7 @@ nav.menu > .container--small {
 .how_to_choose {
 	margin-top: 25px;
 	height: 835px;
+	width: 100%;
 }
 
 .how_to_choose > .container--big {
@@ -1012,7 +1013,6 @@ nav.menu > .container--small {
 
 .gray_part--right {
 	position: absolute;
-	display: block;
 	left: 544px;
 	top: 0;
 	z-index: -1;
@@ -1519,4 +1519,80 @@ nav.menu > .container--small {
 
 .list_right > a:first-child > li:first-child {
 	margin-top: 0;
+}
+
+
+/* Form */
+
+.contact_form {
+	margin-left: 30px;
+	width: 405px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.contact_form > .head {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color: #2a86ff;
+	text-transform: uppercase;
+}
+
+.input_name, .input_mail, .input_message {
+	box-sizing: border-box;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 45px;
+	padding-right: 20px;
+	border: 2px solid #ddd;
+	width: 100%;
+}
+
+.input_name {
+	margin-top: 50px;
+	height: 33px;
+}
+
+.input_mail {
+	height: 33px;
+	margin-top: 30px;
+}
+
+.input_message {
+	resize: none;
+	margin-top: 30px;
+	height: 101px;
+}
+
+input[class="button"] {
+	cursor: pointer;
+	font-size: 16px;
+	color: #fff;
+	background-color: #2a86ff;
+	margin-top: 47px;
+	width: 279px;
+	height: 35px;
+}
+
+/* Copyrights */
+
+.copyrights {
+	box-sizing: border-box;
+	height: 58px;
+	background-color: #0e0e4d;
+
+	color: #fff;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-size: 12px;
+	text-align: center;
+	padding-top: 22px;
+}
+
+.copyrights > .underline {
+	text-decoration: underline;
 }
