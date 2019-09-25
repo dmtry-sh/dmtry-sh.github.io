@@ -31,6 +31,10 @@ body {
 	margin: 0 auto;
 }
 
+.sprite {
+	display: none;
+}
+
 
 /* Container */
 
@@ -116,12 +120,17 @@ header {
 .dealers:before {
   content: "";
   display: inline-block;
-  background-image: url('../img/dealers.svg');
+  background-image: url('../img/icons/dealers.png');
   background-repeat: no-repeat;
   background-position: center;
   width: 15px;
   height: 20px;
   margin-right: 5px;
+	transition: color .15s linear;
+}
+
+.dealers:hover:before {
+	background-image: url('../img/icons/dealers_hover.png');
 }
 
 .social {
@@ -135,14 +144,47 @@ header {
   justify-content: flex-end;
 }
 
-.social > * {
-  text-decoration: none;
-  color: #717171;
-  margin-right: 20px;
-}
-.social > *:last-child {
+.social > a:last-child {
   margin-right: 35px;
 }
+
+.social > .vk,
+.social > .fb,
+.social > .youtube {
+	text-decoration: none;
+	margin-right: 20px;
+	width: 21px;
+	height: 16px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.social > .vk {
+	background-image: url('../img/social/vk.png');
+}
+
+.social > .vk:hover {
+	background-image: url('../img/social/vk_hover.png');
+}
+
+.social > .fb {
+	background-size: contain;
+	background-image: url('../img/social/fb.png');
+}
+
+.social > .fb:hover {
+	background-image: url('../img/social/fb_hover.png');
+}
+
+.social > .youtube {
+	background-image: url('../img/social/yt.png');
+}
+
+.social > .youtube:hover {
+	background-image: url('../img/social/yt_hover.png');
+}
+
 
 .account {
   display: -webkit-flex;
@@ -155,12 +197,13 @@ header {
   box-sizing: border-box;
   width: 105px;
   border-right: 1px solid #fff;
+	transition: color .15s linear;
 }
 
 .account:before {
   content: "";
   display: inline-block;
-  background-image: url('../img/account.svg');
+  background-image: url('../img/icons/account.png');
   background-repeat: no-repeat;
   background-position: center;
   width: 22px;
@@ -170,8 +213,8 @@ header {
   margin-left: 15px;
 }
 
-.account:before:hover {
-  border-color: #2a86ff;
+.account:hover:before {
+  background-image: url('../img/icons/account_hover.png');
 }
 
 .partners {
@@ -184,6 +227,7 @@ header {
   color: #717171;
   box-sizing: border-box;
   width: 140px;
+	transition: color .15s linear;
 }
 
 .partners:before {
@@ -191,11 +235,15 @@ header {
   display: inline-block;
   width: 28px;
   height: 20px;
-  background-image: url('../img/partners.svg');
+  background-image: url('../img/icons/partners.png');
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 15px;
   margin-right: 12px;
+}
+
+.partners:hover:before {
+	background-image: url('../img/icons/partners_hover.png');
 }
 
 .dealers:hover, .account:hover, .partners:hover {
@@ -272,7 +320,7 @@ header {
   top: 4px;
   width: 37px;
   height: 37px;
-  background-image: url('../img/phone.png');
+  background-image: url('../img/icons/phone.png');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -316,7 +364,7 @@ header {
   top: 10px;
   left: -5px;
 
-  background-image: url('../img/shopping_cart.svg');
+  background-image: url('../img/icons/shopping_cart.png');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -665,7 +713,12 @@ nav.menu > .container--small {
 	border: 1px solid #eee;
 	border-radius: 100%;
 	background-color: #eee;
-	transition: background-color .15s linear, border .2s linear;
+	background-image: url('../img/icons/b_icon.png');
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: center;
+	transition: background-color .15s linear, border .2s linear,
+	box-shadow .15s linear;
 }
 
 .benefit__item > .text {
@@ -689,6 +742,8 @@ nav.menu > .container--small {
 .benefit__item:hover > .icon {
 	background-color: #2b6fce;
 	border-color: #2b6fce;
+	box-shadow: 5.657px 5.657px 13px 0px rgb( 26, 26, 85 );
+	background-image: url('../img/icons/b_icon_hover.png');
 }
 
 .hover-info {
@@ -1317,6 +1372,35 @@ nav.menu > .container--small {
 	border-radius: 100%;
 	transition: border .15s linear, background-color .15s linear, box-shadow .15s linear;
 	cursor: pointer;
+	position: relative;
+}
+
+.btns > .call:before {
+	content: "";
+	width: 62px;
+	height: 62px;
+	background-image: url('../img/icons/q_phone.png');
+	position: absolute;
+	left: 24px;
+	top: 22px;
+}
+
+.btns > .call:hover:before {
+	background-image: url('../img/icons/q_phone_hover.png');
+}
+
+.btns > .message:before {
+	content: "";
+	width: 54px;
+	height: 42px;
+	background-image: url('../img/icons/q_mail.png');
+	position: absolute;
+	left: 28px;
+	top: 34px;
+}
+
+.btns > .message:hover:before {
+	background-image: url('../img/icons/q_mail_hover.png');
 }
 
 .btns > .call:hover, .btns > .message:hover {
@@ -1476,9 +1560,24 @@ nav.menu > .container--small {
 
 .f_social > a {
 	display: block;
-	width: 20px;
-	height: 20px;
-	border: 1px solid #fff;
+	width: 21px;
+	height: 16px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.f_social > .vk {
+	background-image: url('../img/social/vk_hover.png');
+}
+
+.f_social > .fb {
+	background-size: contain;
+	background-image: url('../img/social/fb_hover.png');
+}
+
+.f_social > .youtube {
+	background-image: url('../img/social/yt_hover.png');
 }
 
 .clients_info {
@@ -1551,6 +1650,7 @@ nav.menu > .container--small {
 	padding-right: 20px;
 	border: 2px solid #ddd;
 	width: 100%;
+	position: relative;
 }
 
 .input_name {
@@ -1596,3 +1696,13 @@ input[class="button"] {
 .copyrights > .underline {
 	text-decoration: underline;
 }
+
+/* q_phove_hover
+	 tabs, кроме 1
+	 b_icon
+
+	 transition bgi
+
+	 buttons
+
+	 mod_ok
