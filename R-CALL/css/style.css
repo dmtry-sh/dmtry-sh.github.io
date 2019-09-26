@@ -1645,7 +1645,7 @@ nav.menu > .container--small {
 	width: 250px;
 	height: 124px;
 	top: 50px;
-	left: -15px;
+	left: -20px;
 	background-image: url('../img/icons/world_map.png');
 }
 
@@ -1892,6 +1892,7 @@ input[class="button"]:hover {
 }
 
 /*
+
 	montserrat semibold
 
 	transition bgi
