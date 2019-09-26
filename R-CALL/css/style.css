@@ -1639,6 +1639,16 @@ nav.menu > .container--small {
 	color: #fff;
 }
 
+.footer_content:before {
+	content: "";
+	position: absolute;
+	width: 250px;
+	height: 124px;
+	top: 50px;
+	left: -15px;
+	background-image: url('../img/icons/world_map.png');
+}
+
 .footer_content > .contacts {
 	display: -webkit-flex;
 	display: -ms-flex;
@@ -1882,8 +1892,8 @@ input[class="button"]:hover {
 }
 
 /*
+	montserrat semibold
+
 	transition bgi
 
-	 buttons
-
-	 mod_ok
+	mod_ok
