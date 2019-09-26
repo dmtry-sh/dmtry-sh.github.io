@@ -79,9 +79,7 @@
           <span class="description">Кнопка вызова для клиентов, пейджеры для официантов или
             обслужи&shy;вающего персонала</span>
         </div>
-        <div class="item-icon">
-          <img src="img/icons/restaurants.png" alt="">
-        </div>
+        <div class="item-icon restaurants"></div>
       </div>
       <div class="tabs-item">
         <div class="item-text">
@@ -89,9 +87,7 @@
           <span class="description">Кнопка вызова для клиентов, пейджеры для официантов или
           обслужи&shy;вающего персонала</span>
         </div>
-      <div class="item-icon">
-        <img src="img/icons/clients.png" alt="">
-      </div>
+      <div class="item-icon clients"></div>
     </div>
       <div class="tabs-item">
         <div class="item-text">
@@ -99,9 +95,7 @@
           <span class="description">Кнопка вызова для клиентов, пейджеры для официантов или
           обслужи&shy;вающего персонала</span>
         </div>
-      <div class="item-icon">
-        <img src="img/icons/invalid.png" alt="">
-      </div>
+      <div class="item-icon invalid"></div>
     </div>
       <div class="tabs-item">
         <div class="item-text">
@@ -109,9 +103,7 @@
           <span class="description">Кнопка вызова для клиентов, пейджеры для официантов или
           обслужи&shy;вающего персонала</span>
         </div>
-      <div class="item-icon">
-        <img src="img/icons/med.png" alt="">
-      </div>
+      <div class="item-icon med"></div>
     </div>
       <div class="tabs-item">
         <div class="item-text">
@@ -119,9 +111,7 @@
           <span class="description">Кнопка вызова для клиентов, пейджеры для официантов или
           обслужи&shy;вающего персонала</span>
         </div>
-      <div class="item-icon">
-        <img src="img/icons/shops.png" alt="">
-      </div>
+      <div class="item-icon shops"></div>
       </div>
     </div>
   </div>
@@ -150,7 +140,17 @@
                 подавать.</span>
               </div>
             </div>
-            <div class="benefit__item">
+            <div class="benefit__item" id="hidden1">
+              <div class="icon"></div>
+              <div class="text">Ускорение обслуживания клиента</div>
+              <div class="hover-info">
+                <span class="head">Поднять статус заведения</span>
+                <span class="text">Так он, к примеру, может подать сигнал
+                  о том, что блюдо для гостя уже готово и его можно
+                подавать.</span>
+              </div>
+            </div>
+            <div class="benefit__item" id="hover1">
               <div class="icon"></div>
               <div class="text">Ускорение обслуживания клиента</div>
               <div class="hover-info">
@@ -170,7 +170,7 @@
                 подавать.</span>
               </div>
             </div>
-            <div class="benefit__item">
+            <div class="benefit__item" id="hidden2">
               <div class="icon"></div>
               <div class="text">Ускорение обслуживания клиента</div>
               <div class="hover-info">
@@ -180,17 +180,7 @@
                 подавать.</span>
               </div>
             </div>
-            <div class="benefit__item">
-              <div class="icon"></div>
-              <div class="text">Ускорение обслуживания клиента</div>
-              <div class="hover-info">
-                <span class="head">Поднять статус заведения</span>
-                <span class="text">Так он, к примеру, может подать сигнал
-                  о том, что блюдо для гостя уже готово и его можно
-                подавать.</span>
-              </div>
-            </div>
-            <div class="benefit__item">
+            <div class="benefit__item" id="hover2">
               <div class="icon"></div>
               <div class="text">Ускорение обслуживания клиента</div>
               <div class="hover-info">
@@ -416,8 +406,11 @@
         <span class="head">Напишите нам</span>
         <form action="http://localhost:3000/">
           <input class="input_name" type="text" name="name" placeholder="Имя">
+          <div class="name_icon"></div>
           <input class="input_mail" type="text" name="mail" placeholder="Почта">
+          <div class="mail_icon"></div>
           <textarea class="input_message" name="message" placeholder="Ваше сообщение"></textarea>
+          <div class="message_icon"></div>
           <input class="button" type="submit" value="Отправить сообщение">
         </form>
       </div>
@@ -428,5 +421,6 @@
   <span>Copyright © 2005 - 2018</span>&nbsp;<span class="underline">R-CALL -
     система вызова нового поколения</span><span>. Все права защищены.</span>
 </div>
+<script src="js/script.js"></script>
 </body>
 </html>
