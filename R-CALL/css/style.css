@@ -20,6 +20,17 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Montserrat-SemiBold';
+	src: url('../fonts/Montserrat-SemiBold.eot');
+	src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+		url('../fonts/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Montserrat-SemiBold.woff') format('woff'),
+		url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -43,6 +54,7 @@ body {
   width: 1360px;
   margin: 0 auto;
 }
+
 
 /*========== Button ==========*/
 
@@ -239,6 +251,7 @@ header {
   background-image: url('../img/icons/partners.png');
   background-repeat: no-repeat;
   background-position: center;
+	background-size: contain;
   margin-left: 15px;
   margin-right: 12px;
 }
@@ -295,7 +308,7 @@ header {
   background-size: 100% 100%;
 }
 
-.phone {
+.info > .container--small > .phone {
   position: relative;
 
   display: -webkit-flex;
@@ -832,7 +845,7 @@ nav.menu > .container--small {
 	color: #eee;
 
 	margin-top: 13px;
-	width: 180px;
+	width: 190px;
 	text-align: center;
 
 	transition: font-weight .2s linear, color .15s linear;
@@ -1468,7 +1481,7 @@ nav.menu > .container--small {
 }
 
 .contact_us > .will_answer {
-	font-family: 'Montserrat-Regular', sans-serif;
+	font-family: 'Montserrat-SemiBold', sans-serif;
 	font-size: 25px;
 	line-height: 1.04;
 }
@@ -1642,6 +1655,7 @@ nav.menu > .container--small {
 .footer_content:before {
 	content: "";
 	position: absolute;
+	z-index: 0;
 	width: 250px;
 	height: 124px;
 	top: 50px;
@@ -1674,6 +1688,8 @@ nav.menu > .container--small {
 }
 
 .footer_content > .contacts > .show_map {
+	position: relative;
+	z-index: 1;
 	margin-top: 20px;
 	color: #2a86ff;
 }
@@ -1790,9 +1806,9 @@ nav.menu > .container--small {
 	text-transform: uppercase;
 }
 
-.input_name,
-.input_mail,
-.input_message {
+.questions_form > .input_name,
+.questions_form > .input_mail,
+.questions_form > .input_message {
 	font-family: 'Montserrat-Regular', sans-serif;
 	font-size: 12px;
 	box-sizing: border-box;
@@ -1805,18 +1821,18 @@ nav.menu > .container--small {
 	position: relative;
 }
 
-.name_icon,
-.mail_icon,
-.message_icon {
+.questions_form > .name_icon,
+.questions_form > .mail_icon,
+.questions_form > .message_icon {
 	position: absolute;
 }
 
-.input_name {
+.questions_form > .input_name {
 	margin-top: 50px;
 	height: 33px;
 }
 
-.name_icon {
+.questions_form > .name_icon {
 	width: 19px;
 	height: 19px;
 	top: 80px;
@@ -1825,12 +1841,12 @@ nav.menu > .container--small {
 	cursor: text;
 }
 
-.input_mail {
+.questions_form > .input_mail {
 	margin-top: 30px;
 	height: 33px;
 }
 
-.mail_icon {
+.questions_form > .mail_icon {
 	width: 19px;
 	height: 14px;
 	left: 16px;
@@ -1839,13 +1855,13 @@ nav.menu > .container--small {
 	background-image: url('../img/icons/f_mail.png');
 }
 
-.input_message {
+.questions_form > .input_message {
 	resize: none;
 	margin-top: 30px;
 	height: 101px;
 }
 
-.message_icon {
+.questions_form > .message_icon {
 	width: 20px;
 	height: 17px;
 	left: 16px;
@@ -1854,7 +1870,7 @@ nav.menu > .container--small {
 	background-image: url('../img/icons/f_message.png');
 }
 
-input[class="button"] {
+.questions_form > input[class="button"] {
 	cursor: pointer;
 	font-size: 16px;
 	color: #fff;
@@ -1868,7 +1884,7 @@ input[class="button"] {
 	-moz-transition: background-color .15s linear, border-color .15s linear;
 }
 
-input[class="button"]:hover {
+.questions_form > input[class="button"]:hover {
 	background-color: #2562c6;
 	border-color: #2562c6;
 }
@@ -1891,10 +1907,380 @@ input[class="button"]:hover {
 	text-decoration: underline;
 }
 
-/*
+/* Modal */
 
-	montserrat semibold
+.modal {
+	margin: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  opacity: 0;
+	filter: alpha(opacity=0);
+	-o-transition: opacity .15s linear;
+  -webkit-transition: opacity .15s linear;
+  -moz-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+  pointer-events: none;
+}
 
-	transition bgi
+.modal:target {
+  opacity: 1;
+	filter: alpha(opacity=100);
+	pointer-events: auto;
+}
 
-	mod_ok
+#openRequestCall {
+	width: 690px;
+	height: 315px;
+}
+
+.modal_header {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	height: 70px;
+	background-color: #1a1a55;
+
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+
+	padding-left: 50px;
+	padding-right: 30px;
+
+	text-transform: uppercase;
+}
+
+.close {
+	width: 20px;
+	height: 20px;
+	background-image: url('../img/modal_close.png');
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+}
+
+.modal_body {
+	box-sizing: border-box;
+	width: 100%;
+	background-color: #ededed;
+	background-image: url('../img/modal_bg.png');
+	background-repeat: repeat;
+	padding: 30px 46px 30px 50px;
+
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-size: 16px;
+	color: #444;
+}
+
+.modal_form > .wrapper {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.wrapper > .input_name,
+.wrapper > .input_phone {
+	width: 260px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+
+.wrapper > .input_name > input[type="text"],
+.wrapper > .input_phone > input[type="text"] {
+	border: none;
+	border-bottom: 1px solid #d7d7d7;
+	background-color: transparent;
+	outline: none;
+	font-size: 18px;
+	height: 48px;
+}
+
+
+.contact_data {
+	display: inline-block;
+	margin-top: 22px;
+	font-size: 10px;
+	margin-bottom: 30px;
+}
+
+.modal_body > .wrapper:last-child {
+	height: 53px;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.wrapper > .agreement {
+	font-size: 10px;
+	text-align: center;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.wrapper > .agreement > .checkbox {
+	background-color: transparent;
+	border: 1px solid #c2c2c2;
+	width: 13px;
+	height: 13px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.wrapper > .agreement > label {
+	cursor: pointer;
+}
+
+.wrapper > .button {
+	width: 183px;
+	height: 52px;
+	font-size: 16px;
+	background-color: #2a86ff;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color .15s linear, border-color .15s linear;
+	-o-transition: background-color .15s linear, border-color .15s linear;
+	-webkit-transition: background-color .15s linear, border-color .15s linear;
+	-moz-transition: background-color .15s linear, border-color .15s linear;
+}
+
+.wrapper > .button:hover {
+	background-color: #2562c6;
+	border-color: #2562c6;
+}
+
+.modal_background {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+	z-index: 1049;
+	background-color: rgb( 8, 8, 24 );
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-o-transition: opacity .15s linear;
+	-webkit-transition: opacity .15s linear;
+	-moz-transition: opacity .15s linear;
+	transition: opacity .15s linear;
+}
+
+#openAddProduct {
+	width: 940px;
+	height: 315px;
+}
+
+#openAddProduct > .modal_body {
+	padding: 0;
+	height: 245px;
+}
+
+.modal_body > .product {
+	box-sizing: border-box;
+	padding-left: 65px;
+	padding-right: 75px;
+	width: 100%;
+	height: 137px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+
+	font-family: 'Montserrat-regular', sans-serif;
+	font-size: 18px;
+	color: #444;
+}
+
+.modal_body > .product:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 2px;
+	width: 940px;
+	background-color: #2a86ff;
+	bottom: 107px;
+	left: 0;
+}
+
+.product_info {
+	padding-top: 20px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.bold {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-weight: bold;
+}
+
+.product_img {
+	margin-top: 35px;
+	width: 117px;
+	height: 104px;
+}
+
+.product > .price {
+	padding-top: 15px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.product > .price > .left {
+	height: 55px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: 40px;
+	text-align: right;
+}
+
+.product > .price > .right {
+	height: 55px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+.order_btn {
+	margin: 27px 80px 28px 625px;
+
+	box-sizing: border-box;
+	width: 233px;
+	height: 52px;
+	font-size: 16px;
+	background-color: #2a86ff;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color .15s linear, border-color .15s linear;
+	-o-transition: background-color .15s linear, border-color .15s linear;
+	-webkit-transition: background-color .15s linear, border-color .15s linear;
+	-moz-transition: background-color .15s linear, border-color .15s linear;
+}
+
+.order_btn:hover {
+	background-color: #2562c6;
+	border-color: #2562c6;
+}
+
+#openRightChoose {
+	width: 940px;
+	height: 545px;
+	color: #444;
+}
+
+#openRightChoose > .modal_body {
+	height: 475px;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-size: 14px;
+	padding-right: 90px;
+}
+
+.modal_body > .part1,
+.modal_body > .part2 {
+	text-align: justify;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.modal_body > ul {
+	margin-top: 13px;
+	list-style: none;
+}
+
+.modal_body > ul > li {
+	position: relative;
+	padding-left: 25px;
+	margin-top: 10px;
+}
+
+.modal_body > ul > li:before {
+	content: "";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #2a86ff;
+	left: 1px;
+	top: 5.5px;
+}
+
+.modal_body > ul > li:last-child {
+	margin-bottom: 13px;
+}
+
+.modal:target ~ .modal_background {
+	visibility: visible;
+	opacity: 0.878;
+	filter: alpha(opacity=87.8);
+}
+
+#openOrderConsultation {
+	width: 645px;
+	height: 390px;
+}
+
+#openOrderConsultation > .modal_body {
+	height: 320px;
+}
+
+.modal_body > .choose {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 66px;
+}
+
+.modal_body > .choose:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 645px;
+	height: 2px;
+	background-color: #2a86ff;
+	top: 136px;
+	left: 0;
+}
+
+/*	transition bgi для иконок
+		исправить надпись ускорение обслуживания клиента
+*/
