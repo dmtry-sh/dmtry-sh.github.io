@@ -449,10 +449,10 @@ nav.menu > .container--small {
   align-items: center;
   justify-content: center;
   height: 100%;
-  transition: background-color .15s linear;
-	-o-transition: background-color .15s linear;
-	-webkit-transition: background-color .15s linear;
-	-moz-transition: background-color .15s linear;
+  transition: background-color .15s ease;
+	-o-transition: background-color .15s ease;
+	-webkit-transition: background-color .15s ease;
+	-moz-transition: background-color .15s ease;
 }
 
 .menu__item:hover {
@@ -460,23 +460,87 @@ nav.menu > .container--small {
 }
 
 
-.menu__item:hover {
-  background-color: 2a86ff;
-}
-
-/*==================== Main Picture ====================*/
+/*==================== Main Title Slider ====================*/
 
 .main_title {
   display: block;
   height: 664px;
   background-color: #37414f;
-  background-image: url('../img/main_picture.png');
   -webkit-background-size: cover;
   background-size: cover;
   background-position: bottom;
 	background-repeat: no-repeat;
 
   color: #fff;
+}
+
+.main_title__slider {
+	position: relative;
+	height: 664px;
+	overflow: hidden;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	transition: all 1.15s ease;
+}
+
+.item1{
+	background-image: url('../img/slide1.png');
+}
+
+.item2 {
+	background-image: url('../img/slide2.png');
+}
+
+.item3 {
+	background-image: url('../img/tabs_back.png');
+}
+
+.item4 {
+	background-image: url('../img/text_bg.png');
+}
+
+.left_arrow,
+.right_arrow {
+	display: block;
+	position: absolute;
+	top: 305px;
+	width: 62px;
+	height: 54px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color .15s ease;
+	z-index: 3;
+}
+
+.left_arrow:hover,
+.right_arrow:hover {
+	background-color: rgba(42,134,255, 0.5);
+}
+
+.left_arrow {
+	left: 5px;
+	background-image: url("../img/icons/arrow_left.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.right_arrow {
+	right: 5px;
+	background-image: url("../img/icons/arrow_right.svg");
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .main_title > .container--small > .title_text {
@@ -491,6 +555,9 @@ nav.menu > .container--small {
   margin-left: 120px;
 	padding-top: 170px;
 	text-transform: uppercase;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;  
 }
 
 .title_text > span {
@@ -524,25 +591,27 @@ nav.menu > .container--small {
 .tabs-item {
 	height: 135px;
 	width: 270px;
-	border: 1px solid #2c87ff;
+	border: 1px solid #2a86ff;
 	border-left: none;
 
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
 
-	transition: background-color .15s linear, height .15s linear;
-	-o-transition: background-color .15s linear, height .15s linear;
-	-webkit-transition: background-color .15s linear, height .15s linear;
-	-moz-transition: background-color .15s linear, height .15s linear;
+	transition: background-color .15s ease, height .15s ease;
+	-o-transition: background-color .15s ease, height .15s ease;
+	-webkit-transition: background-color .15s ease, height .15s ease;
+	-moz-transition: background-color .15s ease, height .15s ease;
 	cursor: pointer;
 
 	position: relative;
 }
 
 .tabs-item:first-child {
-	border-left: 1px solid #2c87ff;
+	border-left: 1px solid #2a86ff;
 }
+
+
 
 .tabs-item > .item-text {
 	display: -webkit-flex;
@@ -554,6 +623,10 @@ nav.menu > .container--small {
 	padding-left: 26px;
 	padding-top: 12px;
 	width: 220px;
+
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
 }
 
 .item-text > .direction {
@@ -600,7 +673,7 @@ nav.menu > .container--small {
 	background-image: url('../img/icons/restaurants.png');
 }
 
-.tabs-item:hover .restaurants {
+.active .restaurants {
 	background-image: url('../img/icons/restaurants_hover.png');
 }
 
@@ -612,7 +685,7 @@ nav.menu > .container--small {
 	background-image: url('../img/icons/clients.png');
 }
 
-.tabs-item:hover .clients {
+.active .clients {
 	background-image: url('../img/icons/clients_hover.png');
 }
 
@@ -624,7 +697,7 @@ nav.menu > .container--small {
 	background-image: url('../img/icons/invalid.png');
 }
 
-.tabs-item:hover .invalid {
+.active .invalid {
 	background-image: url('../img/icons/invalid_hover.png');
 }
 
@@ -636,7 +709,7 @@ nav.menu > .container--small {
 	background-image: url('../img/icons/med.png');
 }
 
-.tabs-item:hover .med {
+.active .med {
 	background-image: url('../img/icons/med_hover.png');
 }
 
@@ -648,34 +721,22 @@ nav.menu > .container--small {
 	background-image: url('../img/icons/shops.png');
 }
 
-.tabs-item:hover .shops {
+.active .shops {
 	background-image: url('../img/icons/shops_hover.png');
 }
 
-.active-item {
+.active {
 	background-color: #2a86ff;
 	height: 160px;
 }
 
-.active-item > .item-text > .direction {
+.active > .item-text > .direction {
 	color: #fff;
 }
 
-.active-item > .item-text > .description {
+.active > .item-text > .description {
 	opacity: 0;
-}
-
-.tabs-item:hover {
-	background-color: #2a86ff;
-	height: 160px;
-}
-
-.tabs-item:hover > .item-text > .direction {
-	color: #fff;
-}
-
-.tabs-item:hover > .item-text > .description {
-	opacity: 0;
+	filter:alpha(opacity=0);
 }
 
 /*==================== Benefits ====================*/
@@ -687,12 +748,29 @@ nav.menu > .container--small {
 }
 
 .benefit-description > .container--big {
+	height: 100%;
+	position: relative;
+}
+
+.card {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
-
 	height: 100%;
-	position: relative;
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	filter:alpha(opacity=0);
+
+	transition: opacity .35s ease;
+}
+
+.active-card {
+	opacity: 1;
+	filter:alpha(opacity=100);
 }
 
 .choose {
@@ -788,6 +866,9 @@ nav.menu > .container--small {
 	flex-wrap: wrap;
 	margin-left: 10px;
 	margin-right: 5px;
+
+	position: absolute;
+	top: 142px;
 }
 
 .benefit__item {
@@ -845,7 +926,7 @@ nav.menu > .container--small {
 	color: #eee;
 
 	margin-top: 13px;
-	width: 190px;
+	width: 192px;
 	text-align: center;
 
 	transition: font-weight .2s linear, color .15s linear;
@@ -1415,6 +1496,14 @@ nav.menu > .container--small {
 	background-color: #eee;
 }
 
+/*==================== Production content ====================*/
+
+main.content {
+	min-height: 2380px;
+	width: 100%;
+}
+
+
 /*==================== Map & Contacts ====================*/
 
 .map_contacts {
@@ -1461,6 +1550,23 @@ nav.menu > .container--small {
 	background-image: url('../img/icons/pointer.png');
 	left: 515px;
 	top: -230px;
+}
+
+.user_interaction:after {
+	content: "344090, г. Ростов-на-Дону, пр. Стачки, д. 999, оф. 999";
+	position: absolute;
+	top: -240px;
+	left: 580px;
+	background-color: #2a86ff;
+	width: 227px;
+	height: 76px;
+	display: block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 18px 17px;
+	color: #fff;
+	opacity: 0.94;
+	filter:alpha(opacity=94);
 }
 
 .user_interaction > .info	{
