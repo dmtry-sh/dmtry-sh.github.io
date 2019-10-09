@@ -4,12 +4,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/baf88846fc.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <div class="sidebar--top">
         <div class="container--small">
-          <a href="#" class="dealers">Дилеры в вашем городе</a>
+          <a href="contacts.html" class="dealers">Дилеры в вашем городе</a>
           <div class="social">
             <a href="#" class="vk"></a>
             <a href="#" class="fb"></a>
@@ -26,10 +27,13 @@
           <div class="phone">
             <span class="phone__inner">8 800 800 80 00</span>
             <span class="free">(звонок из России бесплатный)</span>
-            <a href="#openRequestCall" class="call">Заказать звонок</a>
+            <a href="#" class="call">Заказать звонок</a>
           </div>
           <div class="shopping-cart">
-            <span class="count">100 000р</span>
+            <div class="count">
+              <span>100 000</span>
+              <i class="fas fa-ruble-sign"></i>
+            </div>
             <a href="#" class="place-order">Оформить заказ</a>
           </div>
           <a href="#" class="test-drive button">
@@ -44,10 +48,10 @@
             <a href="#" class="menu__item"><li>Главная</li></a>
             <a href="production.html" class="menu__item"><li>Продукция</li></a>
             <a href="#" class="menu__item"><li>Решения</li></a>
-            <a href="#" class="menu__item"><li>Гарантия</li></a>
-            <a href="#" class="menu__item"><li>Доставка и оплата</li></a>
-            <a href="#" class="menu__item"><li>Поддержка</li></a>
-            <a href="#" class="menu__item"><li>О компании</li></a>
+            <a href="text.html" class="menu__item"><li>Гарантия</li></a>
+            <a href="text.html" class="menu__item"><li>Доставка и оплата</li></a>
+            <a href="text.html" class="menu__item"><li>Поддержка</li></a>
+            <a href="text.html" class="menu__item"><li>О компании</li></a>
             <a href="contacts.html" class="menu__item"><li>Контакты</li></a>
           </ul>
         </div>
@@ -539,15 +543,24 @@
 <div class="tab-benefits__background"></div>
 </div>
 
-  </div>
-  </section>
+</div>
+</section>
 <!--====================== Product ======================-->
   <section class="product">
     <div class="container--big">
       <div class="product__inner">
         <div class="product__info">
           <div class="head">Кнопка вызова КСЛ-2</div>
-          <div class="comments"><a href="#">из 12 отзывов</a></div>
+          <div class="comments">
+            <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#">из 12 отзывов</a>
+          </div>
           <div class="info">
             <ul class="info__list">
               <li class="info__list__item">Рабочая частота, МГц - 868</li>
@@ -565,32 +578,44 @@
             </ul>
           </div>
           <div class="price">
-            <span class="current">10 000 р</span>
-            <span class="old">13 000 р</span>
+            <span class="current">10 000 <i class="fas fa-ruble-sign fa-xs"></i></span>
+            <span class="old">13 000 <i class="fas fa-ruble-sign fa-xs"></i></span>
           </div>
           <a href="#openAddProduct" class="add button">Добавить в корзину</a>
         </div>
         <div class="product__photo">
           <img src="img/product_big.png" alt="" class="photo">
           <div class="product__list">
-            <img src="img/product_small.png" alt="" class="photo_small">
-            <img src="img/product_small.png" alt="" class="photo_small">
-            <img src="img/product_small.png" alt="" class="photo_small">
-            <img src="img/product_small.png" alt="" class="photo_small">
+            <div class="product__list__item product__list__item--active">
+              <img src="img/product_big.png" alt="" class="photo_small">
+            </div>
+            <div class="product__list__item">
+              <img src="img/how_to_choose.png" alt="" class="photo_small">
+            </div>
+            <div class="product__list__item">
+              <img src="img/product_big2.png" alt="" class="photo_small">
+            </div>
+            <div class="product__list__item">
+              <img src="img/how_to_choose2.png" alt="" class="photo_small">
+            </div>
+            <div class="product__list__item">
+              <img src="img/product_big3.png" alt="" class="photo_small">
+            </div>
           </div>
         </div>
         <div class="product__color">
           <span class="head">Доступные цвета:</span>
-          <span class="count">Коричневый 50шт</span>
+          <span class="color">Коричневый</span>
+          <span class="count">50шт</span>
           <ul class="color__list">
             <li class="color__list__item color-1"></li>
             <li class="color__list__item color-2"></li>
-            <li class="color__list__item color-3"></li>
+            <li class="color__list__item color-3 color__list__item--active"></li>
             <li class="color__list__item color-4"></li>
             <li class="color__list__item color-5"></li>
           </ul>
         </div>
-        <a href="#" class="to_catalog button">Перейти в полный каталог</a>
+        <a href="production.html" class="to_catalog button">Перейти в полный каталог</a>
       </div>
     </div>
   </section>
@@ -621,7 +646,7 @@
         Этим устройством
       </div>
       <div class="photo_part"></div>
-      <a href="#openRightChoose"class="choose_btn button">Как правильно выбрать</a>
+      <a href="text.html"class="choose_btn button">Как правильно выбрать</a>
       <div class="gray_part--right"></div>
     </div>
   </section>
@@ -662,6 +687,7 @@
     <div class="gray_part--left"></div>
   </div>
 </section>
+</main>
 <!--====================== Questions ======================-->
 <section class="questions">
   <div class="container--big">
@@ -695,9 +721,10 @@
         <div class="partners_icon"></div>
         <div class="partners_icon"></div>
       </div>
+      <div class="left_arrow"></div>
+      <div class="right_arrow"></div>
   </div>
 </div>
-</main>
 <!--====================== Footer ======================-->
 <div class="footer">
   <div class="container--small">
@@ -722,14 +749,14 @@
         <span class="head">Информация для клиентов</span>
         <div class="lists">
           <ul class="list_left">
-            <a href=""><li>Главная</li></a>
-            <a href=""><li>Продукция</li></a>
+            <a href="#"><li>Главная</li></a>
+            <a href="prodaction.html"><li>Продукция</li></a>
             <a href=""><li>Решения</li></a>
             <a href=""><li>Гарантия</li></a>
             <a href=""><li>Доставка и оплата</li></a>
             <a href=""><li>Поддержка</li></a>
             <a href=""><li>О компании</li></a>
-            <a href=""><li>Контракты</li></a>
+            <a href="contacts.html"><li>Контакты</li></a>
             <a href=""><li>Карта сайта</li></a>
             <a href=""><li>Положение об обработке персональных данных</li></a>
           </ul>
@@ -769,7 +796,7 @@
 <div id="openRequestCall" class="modal">
     <div class="modal_header">
       <span>Заказать обратный звонок</span>
-      <a href="#close" class="close"></a>
+      <div class="close"></div>
     </div>
     <div class="modal_body">
       <form class="modal_form" action="">
@@ -800,7 +827,7 @@
 <div id="openAddProduct" class="modal">
   <div class="modal_header">
     <span>Товар добавлен в корзину</span>
-    <a href="#close" class="close"></a>
+    <div class="close"></div>
   </div>
   <div class="modal_body">
     <div class="product">
@@ -829,7 +856,7 @@
 <div id="openRightChoose" class="modal">
   <div class="modal_header">
     <span>Как выбрать систему вызова?</span>
-    <a href="#close" class="close"></a>
+    <div class="close"></div>
   </div>
   <div class="modal_body">
     <span class="part1">Система вызова персонала позволяет оперативно оповещать персонал
@@ -860,7 +887,7 @@
 <div id="openOrderConsultation" class="modal">
   <div class="modal_header">
     <span>Заказать консультацию</span>
-    <a href="#close" class="close"></a>
+    <div class="close"></div>
   </div>
   <div class="modal_body">
     <div class="choose"></div>
