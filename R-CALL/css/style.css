@@ -1319,9 +1319,10 @@ nav.menu > .container--small {
 
 .wrapper > .head {
 	font-family: 'Montserrat-Bold', sans-serif;
-	width: 495px;
+	width: 570px;
 	font-size: 30px;
 	margin-left: 136px;
+	line-height: 36px;
 	font-weight: bold;
 	color: #1a1a55;
 	text-transform: uppercase;
@@ -1571,15 +1572,6 @@ nav.menu > .container--small {
 	z-index: -1;
 	background-color: #eee;
 }
-
-/*==================== Production content ====================*/
-
-main.content {
-	min-height: 2380px;
-	width: 100%;
-}
-
-
 /*==================== Map & Contacts ====================*/
 
 .map_contacts {
@@ -2025,7 +2017,7 @@ main.content {
 	font-size: 44px;
 	font-weight: bold;
 	width: 450px;
-	height: 142px;
+	line-height: 50px;
 }
 
 .text_title__title > span {
@@ -2033,7 +2025,6 @@ main.content {
 	font-family: 'Montserrat-Regular', sans-serif;
 	font-size: 30px;
 	width: 390px;
-	height: 30px;
 	margin-top: 23px;
 }
 
@@ -2062,13 +2053,12 @@ main.content {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	font-size: 16px;
 	text-shadow: 0 0 7px rgba(0, 0, 0, 0.35);
 
-	width: 470px;
 	margin-top: 43px;
-	margin-left: 170px;
+
 }
 
 .breadcrumbs > a {
@@ -2079,11 +2069,163 @@ main.content {
 
 .fa-chevron-right {
 	align-self: center;
+	margin-left: 15px;
 }
 
 .breadcrumbs--active {
 	color: #2a86ff;
+	margin-left: 15px;
 }
+
+/*==================== Showcase ====================*/
+
+.showcase {
+	height: 1430px;
+}
+
+.showcase > .container--small {
+	height: 100%;
+	padding: 80px 15px 83px 15px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	position: relative;
+}
+
+.showcase > .container--small:before {
+	content: '';
+	position: absolute;
+
+	width: 100%;
+	height: 4px;
+	background-color: #2a86ff;
+	left: 0;
+	top: 37px;
+}
+
+.showcase__panel {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.showcase__panel__item {
+	box-sizing: border-box;
+	width: 279px;
+	height: 382px;
+	border: 1px solid #eee;
+
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+
+	font-family: 'Montserrat-Regular', sans-serif;
+	color: #1a1a55;
+
+	cursor: pointer;
+}
+
+.showcase__panel__item:nth-child(n+5) {
+	margin-top: 18px;
+}
+
+.panel__item__photo {
+	width: 260px;
+	height: 215px;
+	margin: 7px 10px 0 9px;
+}
+
+.panel__item__title {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	height: 13px;
+
+	margin: 31px auto 0 auto;
+}
+
+.panel__item__color {
+	margin: 13px auto 0 auto;
+
+	font-size: 14px;
+	height: 15px;
+}
+
+.panel__item__old_price {
+	font-style: 16px;
+	text-transform: uppercase;
+	color: #444;
+	margin: 18px auto 0 auto;
+	text-decoration: line-through;
+	height: 12px;
+}
+
+.panel__item__old_price > .fas {
+	font-size: 12px;
+}
+
+.panel__item__price {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-size: 28px;
+	margin: 14px auto 0 auto;
+	height: 19px;
+}
+
+.panel__item__price > .fas {
+	font-size: 21px;
+}
+
+.showcase__page_navigation {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: center;
+
+	margin-top: 48px;
+	margin-bottom: 83px;
+}
+
+.page_navigation__item {
+	width: 40px;
+	height: 40px;
+	background-color: #eee;
+
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+
+	font-family: 'Montserrat-regular', sans-serif;
+	font-size: 16px;
+	color: #7c7c7c;
+
+	margin-right: 5px;
+
+	cursor: pointer;
+}
+
+.page_navigation__item:last-child {
+	margin-right: 0;
+}
+
+.page_navigation__item.active {
+	background-color: #2a86ff;
+	color: #fff;
+}
+
+
+
 
 /*==================== Info Content ====================*/
 
