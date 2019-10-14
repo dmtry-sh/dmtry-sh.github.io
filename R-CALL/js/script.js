@@ -161,6 +161,9 @@ for (let item of product_photo_items) {
   }
 }
 
+
+
+
 // =============================== Open/Close modal  ===============================
 
 var modal_bg = document.querySelector('.modal_background');
