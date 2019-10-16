@@ -1,3 +1,16 @@
+// =============================== Menu hover ===============================
+
+var menu_items = document.querySelectorAll('.menu__item');
+
+for (let item of menu_items){
+  if (item.lastElementChild.className == 'submenu__list'){
+    item.querySelector('.submenu__list').onmouseover = (() => item.style.backgroundColor = '#1a1a55');
+    item.querySelector('.submenu__list').onmouseout = (() => item.style = null);
+
+  }
+}
+
+
 // =============================== showcase__panel__photo  ===============================
 
 var photo_containers = document.getElementsByClassName('panel__item__photo');

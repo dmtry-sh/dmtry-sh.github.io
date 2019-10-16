@@ -10,7 +10,6 @@ for (let item of menu_items){
   }
 }
 
-
 // =============================== Open/Close modal  ===============================
 
 var modal_bg = document.querySelector('.modal_background');

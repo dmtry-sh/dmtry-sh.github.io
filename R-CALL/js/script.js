@@ -1,4 +1,13 @@
+// =============================== Menu hover ===============================
 
+var menu_items = document.querySelectorAll('.menu__item');
+
+for (let item of menu_items){
+  if (item.lastElementChild.className == 'submenu__list'){
+    item.querySelector('.submenu__list').onmouseover = (() => item.style.backgroundColor = '#1a1a55');
+    item.querySelector('.submenu__list').onmouseout = (() => item.style = null);
+  }
+}
 
 // =============================== Main slider ===============================
 var next_arrow = document.querySelector('.main_title__slider > .right_arrow');
@@ -165,18 +174,6 @@ for (let item of product_photo_items) {
 
 
 // =============================== Open/Close modal  ===============================
-
-var modal_bg = document.querySelector('.modal_background');
-var modal_request_call = document.querySelector('#openRequestCall');
-var modal_add_product = document.querySelector('#openAddProduct');
-var order_consultation = document.querySelector('#openOrderConsultation');
-
-var btn_open_request_call = document.querySelector('.phone .call');
-var btn_close_request_call = document.querySelector('#openRequestCall > .modal_header > .close');
-
-var btn_open_add_product = document.querySelector('.add.button');
-var btn_close_add_product = document.querySelector('#openAddProduct > .modal_header > .close');
-
 function open(modal) {
   modal_bg.style.opacity = '0.878';
   modal_bg.style.visibility = 'visible';
@@ -191,8 +188,30 @@ function close(modal) {
   modal.style = null;
 }
 
+var modal_bg = document.querySelector('.modal_background');
+var modal_request_call = document.querySelector('#requestCall');
+var modal_add_product = document.querySelector('#addProduct');
+var modal_order_consultation = document.querySelector('#orderConsultation');
+
+var btn_open_request_call = document.querySelector('.phone .call');
+var btn_close_request_call = document.querySelector('#requestCall > .modal_header > .close');
+
+var btn_open_add_product = document.querySelector('.add.button');
+var btn_close_add_product = document.querySelector('#addProduct > .modal_header > .close');
+
+var btn_open_order_call_phone = document.querySelector('.contact_us > .btns > .call');
+var btn_open_order_call_mail = document.querySelector('.contact_us > .btns > .message');
+var btn_close_order_call = document.querySelector('#orderConsultation > .modal_header > .close');
+
+
+
+
 btn_open_request_call.onclick = (() => open(modal_request_call));
 btn_close_request_call.onclick = (() => close(modal_request_call));
 
 btn_open_add_product.onclick = (() => open(modal_add_product));
 btn_close_add_product.onclick = (() => close(modal_add_product));
+
+btn_open_order_call_mail.onclick = (() => open(modal_order_consultation));
+btn_open_order_call_phone.onclick = (() => open(modal_order_consultation));
+btn_close_order_call.onclick = (() => close(modal_order_consultation));
