@@ -45,7 +45,6 @@ body {
 	max-width: 1920px;
 	width: 100%;
 	margin: 0 auto;
-	overflow-x: hidden;
 }
 
 /*==================== Container ====================*/
@@ -521,11 +520,12 @@ nav.menu > .container--small {
 .submenu__item > a {
 	width: 100%;
 	height: 100%;
-	padding: 15px;
+	padding: 8px;
+	padding-left: 22px;
 	text-align: left;
 	font-family: 'Montserrat-Regular', sans-serif;
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 15px;
 	display: block;
 	text-decoration: none;
 	color: #fff;
@@ -1050,13 +1050,14 @@ nav.menu > .container--small {
 	color: #fff;
 	line-height: 1.143;
 
-	z-index: 2;
+	z-index: 5;
 
 }
 
 .hover-info > .head {
 	display: block;
 	padding: 15px 12px 12px 12px;
+	text-align: center;
 
 	font-size: 14px;
 	font-family: 'Montserrat-Bold', sans-serif;
@@ -1069,6 +1070,7 @@ nav.menu > .container--small {
 .hover-info > .text {
 	display: block;
 	padding: 15px 12px 25px 12px;
+	text-align: center;
 
 	font-size: 13px;
 	font-family: 'Montserrat-Regular', sans-serif;
@@ -2157,6 +2159,301 @@ nav.menu > .container--small {
 	margin-left: 15px;
 }
 
+/*==================== Sphere Title ====================*/
+
+.sphere_title {
+	box-sizing: border-box;
+	height: 350px;
+	width: 100%;
+	background-image: url('../img/text_title_bg.png');
+	background-size: cover;
+	background-position: right;
+}
+
+.sphere_title > .container--small {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.sphere_title__title {
+	font-family: 'Montserrat-Regular', sans-serif;
+	color: #fff;
+	padding-left: 15px;
+}
+
+.sphere_title__title > span {
+	display: inline-block;
+	margin-top: 50px;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 44px;
+}
+
+.sphere_title__title > h1 {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 44px;
+	font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.sphere_title__title > .small {
+	text-transform: lowercase;
+	margin-top: 15px;
+	font-size: 30px;
+}
+
+.sphere_title > .container--small > .breadcrumbs {
+	padding-right: 15px;
+	margin-top: 60px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: flex-end;
+	font-family: 'Montserrat-Regular', sans-serif;
+	margin-bottom: 60px;
+}
+
+/*==================== Sphere Description ====================*/
+
+.sphere_description {
+	height: 580px;
+	overflow: hidden;
+}
+
+.sphere_description > .container--small {
+	height: 100%;
+	position: relative;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	position: relative;
+}
+
+.sphere_description__description {
+	padding-top: 1px;
+	height: 100%;
+	width: 705px;
+	margin-left: 15px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.description__text {
+	text-align: justify;
+	width: 475px;
+	margin-top: 60px;
+	margin-left: 187px;
+	margin-right: 45px;
+	position: relative;
+	z-index: 1;
+}
+
+.description__text > span {
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-weight: normal;
+}
+
+.description__text > .par2 {
+	margin-top: 20px;
+}
+
+.description__text > img {
+	width: 587px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 500px;
+}
+
+.sphere_description > .container--small > .gray_part {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 450px;
+	background-color: #eee;
+	z-index: 0;
+}
+
+.description__buttons {
+	margin-top: 65px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.description__buttons > .button.more {
+	width: 230px;
+	height: 47px;
+	margin-left: 15px;
+	margin-right: 70px;
+	z-index: 1;
+	font-size: 16px;
+	background-color: #2a86ff;
+	color: #fff;
+	transition: all .15s ease;
+}
+
+.description__buttons > .button.more:hover {
+	background-color: #2562ff;
+	border-color: #2562ff;
+}
+
+.description__buttons > .button.how_choose {
+	width: 380px;
+	height: 47px;
+	z-index: 1;
+	margin-right: 55px;
+	font-size: 16px;
+}
+
+
+.sphere_description__benefits {
+	width: 100%;
+	height: 100%;
+	background-color: #1a1a55;
+	background-image: url('../img/sphere_benefits_bg.png');
+	position: absolute;
+	left: 720px;
+	z-index: 0;
+
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.sphere_description__benefits > h2 {
+	display: inline-block;
+	width: 385px;
+	color: #fff;
+	font-family: 'Montserrat-Bold', sans-serif;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 30px;
+	margin-top: 60px;
+	margin-left: 50px;
+}
+
+.benefits__items {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-left: 53px;
+	margin-top: 37px;
+}
+
+.items__block {
+	width: 270px;
+	height: 80px;
+	margin-top: 50px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.items__block:first-child {
+	margin-top: 0;
+}
+
+.items__block__icon {
+	box-sizing: border-box;
+	width: 80px;
+	height: 80px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	position: relative;
+	transition: border-color .15s ease,
+	background-color .15s ease;
+}
+
+.items__block__icon:before {
+	content: '';
+	position: absolute;
+	top: 17px;
+	left: 21px;
+	width: 38px;
+	height: 45px;
+	background-image: url('../img/icons/b_icon_hover.png');
+}
+
+.items__block:hover > .items__block__icon {
+	border-color: #2a86ff;
+	background-color: #2a86ff;
+	box-shadow: 6px 6px 13px rgba(26, 26, 85, 0.71);
+}
+
+.items__block__text {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 153px;
+	margin: auto 0 auto 35px;
+
+	text-transform: uppercase;
+	color: #fff;
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: bold;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.items__block > .hover-info{
+	top: 110px;
+	left: 0;
+	width: 330px;
+}
+
+.items__block:hover + .items__block {
+	visibility: hidden;
+}
+
+.items__block:last-child:hover > .hover-info {
+	top: -150px;
+}
+
+.items__block:hover > .hover-info {
+	visibility: visible;
+}
+
+.items__block > .hover-info:hover {
+	opacity: 0;
+	filter:alpha(opacity=0);
+	visibility: hidden;
+}
+
+
+/*==================== Sphere Production ====================*/
+
+.sphere_production {
+	height: 1460px;
+}
+
+
 /*==================== Showcase ====================*/
 
 .showcase {
@@ -2956,6 +3253,8 @@ box-shadow: 6px 36px 26px -31px rgba(0,0,0,0.75);
 	position: absolute;
 	right: 0;
 	bottom: 1px;
+	user-select: none;
+	z-index: 0;
 }
 
 /*==================== Our partners ====================*/
