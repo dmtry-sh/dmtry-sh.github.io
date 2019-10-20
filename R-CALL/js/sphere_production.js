@@ -9,9 +9,6 @@ for (let item of menu_items){
 
   }
 }
-
-
-
 // =============================== Hide/show on last benefit item hover  ===============================
 
 var hover_item = document.querySelector('.items__block:last-child');
@@ -20,7 +17,21 @@ var hide_item = document.querySelectorAll('.items__block')[1];
 hover_item.onmouseover = (() => hide_item.style.visibility = 'hidden');
 hover_item.onmouseout = (() => hide_item.style = null);
 
+// =============================== Onclick filter__list__item  ===============================
 
+var filter_items = document.querySelectorAll('.filter__list__item');
+
+for (let item of filter_items) {
+  item.onclick = function() {
+    item.classList.add('active');
+    for (let other_item of filter_items) {
+      if (other_item.className == item.className &&
+      other_item.innerHTML != item.innerHTML) {
+        other_item.classList.remove('active');
+      }
+    }
+  }
+}
 // =============================== Open/Close modal  ===============================
 function open(modal) {
   modal_bg.style.opacity = '0.878';

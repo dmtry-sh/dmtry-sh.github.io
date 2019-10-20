@@ -109,6 +109,7 @@ header {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+	justify-content: space-between;
   height: 100%;
 }
 
@@ -152,8 +153,8 @@ header {
   display: flex;
   -ms-align-items: center;
   align-items: center;
-  width: 680px;
-  border-right:1px solid #fff;
+	width: 926px;
+  /*border-right:1px solid #fff;*/
   justify-content: flex-end;
 }
 
@@ -207,12 +208,14 @@ header {
   text-decoration: none;
   color: #717171;
   box-sizing: border-box;
-  width: 105px;
+  width: 0;
   border-right: 1px solid #fff;
 	transition: color .15s linear;
 	-o-transition: color .15s linear;
 	-webkit-transition: color .15s linear;
 	-moz-transition: color .15s linear;
+	padding-right: 15px;
+	visibility: hidden;
 }
 
 .account:before {
@@ -241,11 +244,12 @@ header {
   text-decoration: none;
   color: #717171;
   box-sizing: border-box;
-  width: 140px;
+  width: 0;
 	transition: color .15s linear;
 	-o-transition: color .15s linear;
 	-webkit-transition: color .15s linear;
 	-moz-transition: color .15s linear;
+	visibility: hidden;
 }
 
 .partners:before {
@@ -2451,6 +2455,155 @@ nav.menu > .container--small {
 
 .sphere_production {
 	height: 1460px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.sphere_production > .container--small > .header{
+	text-transform: uppercase;
+	font-size: 30px;
+	color: #1a1a55;
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 15px;
+	margin-top: 60px;
+}
+
+.filter_panel {
+	margin-top: 35px;
+	width: 100%;
+	height: 42px;
+	border-bottom: 4px solid #2a86ff;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.filter__list {
+	list-style: none;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	margin-right: 18px;
+}
+
+.filter__list__item {
+	box-sizing: border-box;
+	display: block;
+	height: 100%;
+}
+
+.filter__list__item > a {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 14px 12px 16px;
+	text-decoration: none;
+	color: #444;
+	text-transform: uppercase;
+	font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.filter__list__item.active > a {
+	color: #fff;
+}
+
+
+.sphere_showcase__panel {
+	width: 1140px;
+	height: 1180px;
+	margin: 40px auto 75px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+
+.sphere_showcase__panel > .showcase__panel__item {
+	position: relative;
+	transition: all .15s ease;
+}
+
+.sphere_showcase__panel > .showcase__panel__item > .panel__item__buy {
+	visibility: hidden;
+	top: 290px;
+	left: 65px;
+}
+
+.sphere_showcase__panel > .showcase__panel__item:hover > .panel__item__buy {
+	visibility: visible;
+	z-index: 50;
+
+}
+
+
+.sphere_showcase__panel > .showcase__panel__item:hover > .panel__item__title {
+	position: absolute;
+	color: #fff;
+	top: 80px;
+	left: 20px;
+	z-index: 10;
+}
+
+.sphere_showcase__panel > .showcase__panel__item:hover > .panel__item__color {
+	position: absolute;
+	color: #fff;
+	top: 126px;
+	left: 50px;
+	z-index: 10;
+}
+
+.sphere_showcase__panel > .showcase__panel__item:hover > .panel__item__old_price {
+	position: absolute;
+	color: #fff;
+	top: 159px;
+	left: 110px;
+	z-index: 10;
+}
+
+.sphere_showcase__panel > .showcase__panel__item:hover > .panel__item__price {
+	position: absolute;
+	color: #fff;
+	top: 185px;
+	left: 20px;
+	z-index: 10;
+}
+
+.sphere_showcase__panel > .showcase__panel__item:hover > .panel__item__photo{
+	-webkit-filter: blur(3px);
+	 	 -moz-filter: blur(3px);
+		   -o-filter: blur(3px);
+		  -ms-filter: blur(3px);
+			   	filter: blur(3px);
+}
+
+.sphere_showcase__panel > .showcase__panel__item:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #1a1a55;
+	opacity: 0;
+	z-index: 5;
+	visibility: hidden;
+	transition: all .15s ease;
+}
+
+.sphere_showcase__panel > .showcase__panel__item:hover:before {
+		box-shadow: 0 0 27px rgba(0, 0, 0, 0.6);
+		opacity: 0.75;
+		visibility: visible;
 }
 
 
@@ -2516,7 +2669,7 @@ nav.menu > .container--small {
 	height: 98px;
 	top: 0;
 	left: 0;
-	z-index: 4;
+	z-index: 10;
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
@@ -2574,35 +2727,35 @@ nav.menu > .container--small {
 	font-size: 16px;
 }
 
-.showcase__panel__item:nth-child(4n+1) {
+.showcase__panel > .showcase__panel__item:nth-child(4n+1) {
 	left: 15px;
 }
 
-.showcase__panel__item:nth-child(4n+2) {
+.showcase__panel > .showcase__panel__item:nth-child(4n+2) {
 	left: 302px;
 }
 
-.showcase__panel__item:nth-child(4n+3) {
+.showcase__panel > .showcase__panel__item:nth-child(4n+3) {
 	left: 589px;
 }
 
-.showcase__panel__item:nth-child(4n+4) {
+.showcase__panel > .showcase__panel__item:nth-child(4n+4) {
 	left: 876px;
 }
 
-.showcase__panel__item:nth-child(n):nth-child(-n+4) {
+.showcase__panel > .showcase__panel__item:nth-child(n):nth-child(-n+4) {
 	top: 0;
 }
 
-.showcase__panel__item:nth-child(n+5):nth-child(-n+8) {
+.showcase__panel > .showcase__panel__item:nth-child(n+5):nth-child(-n+8) {
 	top: 398px;
 }
 
-.showcase__panel__item:nth-child(n+9):nth-child(-n+12) {
+.showcase__panel > .showcase__panel__item:nth-child(n+9):nth-child(-n+12) {
 	top: 798px;
 }
 
-.showcase__panel__item:hover {
+.showcase__panel > .showcase__panel__item:hover {
 	box-shadow: 0 0 27px rgba(0, 0, 0, 0.39);
 
 	z-index: 1;
@@ -2614,7 +2767,7 @@ nav.menu > .container--small {
 	visibility: visible;
 }
 
-.showcase__panel__item:nth-child(n+5) {
+.showcase__panel > .showcase__panel__item:nth-child(n+5) {
 	margin-top: 18px;
 }
 
@@ -2735,8 +2888,15 @@ nav.menu > .container--small {
 .panel__item__price {
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-size: 28px;
-	margin: 14px auto 0 auto;
+	margin: 14px auto 0 20px;
 	height: 19px;
+	align-self: flex-start;
+}
+
+.panel__item__price > .price {
+	font-size: 14px;
+	font-family: 'Montserrat-regular', sans-serif;
+	margin-right: 30px;
 }
 
 .panel__item__price > .fas {
