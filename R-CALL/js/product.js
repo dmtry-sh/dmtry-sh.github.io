@@ -1,4 +1,39 @@
+// =============================== showcase__panel__item__count  ===============================
+
+var item = document.querySelector('.items-amount__count')
+
+item.querySelector('.minus').onclick = function() {
+  let num = Number(item.querySelector('.number').innerHTML);
+  if (num > 0) {
+    num--;
+  }
+  item.querySelector('.number').innerHTML = num;
+}
+
+item.querySelector('.plus').onclick = function() {
+  let num = Number(item.querySelector('.number').innerHTML);
+  num++;
+  item.querySelector('.number').innerHTML = num;
+}
+
+// =============================== Onclick filter__list__item  ===============================
+
+var filter_items = document.querySelectorAll('.filter__list__item');
+
+for (let item of filter_items) {
+  item.onclick = function() {
+    item.classList.add('active');
+    for (let other_item of filter_items) {
+      if (other_item.className == item.className &&
+      other_item.innerHTML != item.innerHTML) {
+        other_item.classList.remove('active');
+      }
+    }
+  }
+}
+
 // =============================== Open/Close modal  ===============================
+
 function open(modal) {
   modal_bg.style.opacity = '0.878';
   modal_bg.style.visibility = 'visible';
