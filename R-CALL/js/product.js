@@ -19,18 +19,40 @@ item.querySelector('.plus').onclick = function() {
 // =============================== Onclick filter__list__item  ===============================
 
 var filter_items = document.querySelectorAll('.filter__list__item');
+var panels = document.querySelectorAll('.info-panel > .container--small > *');
 
-for (let item of filter_items) {
-  item.onclick = function() {
-    item.classList.add('active');
-    for (let other_item of filter_items) {
-      if (other_item.className == item.className &&
-      other_item.innerHTML != item.innerHTML) {
-        other_item.classList.remove('active');
+for (let panel of panels) {
+  alert(panel.innerHTML);
+}
+
+var pair = [];
+
+pair.push({'filter': filter_items[0], 'panel': panels[1]});
+pair.push({'filter': filter_items[1], 'panel': panels[2]});
+pair.push({'filter': filter_items[3], 'panel': panels[3]});
+pair.push({'filter': filter_items[4], 'panel': panels[4]});
+
+
+for (let pair_item of pair) {
+  pair_item['filter'].onclick = function() {
+    pair_item['filter'].classList.add('active');
+    pair_item['panel'].classList.add('visible');
+    for (let other_pair of pair) {
+      if (pair_item['filter'] != other_pair['filter']) {
+        other_pair['filter'].classList.remove('active')
+        other_pair['panel'].classList.remove('visible')
       }
     }
   }
 }
+
+
+
+// =============================== Show panels on filter click  ===============================
+
+
+
+
 
 // =============================== Open/Close modal  ===============================
 
