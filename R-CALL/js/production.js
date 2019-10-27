@@ -1,4 +1,4 @@
-// =============================== Menu hover ===============================
+  // =============================== Menu hover ===============================
 
 var menu_items = document.querySelectorAll('.menu__item');
 
@@ -84,7 +84,7 @@ for (let item of counters) {
   }
 }
 
-// =============================== Open/Close modal  ===============================  
+// =============================== Open/Close modal  ===============================
 function open(modal) {
   modal_bg.style.opacity = '0.878';
   modal_bg.style.visibility = 'visible';
@@ -102,9 +102,13 @@ function close(modal) {
 var modal_bg = document.querySelector('.modal_background');
 var modal_request_call = document.querySelector('#requestCall');
 var modal_order_consultation = document.querySelector('#orderConsultation');
+var modal_add_product = document.querySelector('#addProduct');
 
 var btn_open_request_call = document.querySelector('.phone .call');
 var btn_close_request_call = document.querySelector('#requestCall > .modal_header > .close');
+
+var btns_open_add_product = document.querySelectorAll('.panel__item__buy.button');
+var btn_close_add_product = document.querySelector('#addProduct > .modal_header > .close');
 
 var btn_open_order_call_phone = document.querySelector('.contact_us > .btns > .call');
 var btn_open_order_call_mail = document.querySelector('.contact_us > .btns > .message');
@@ -113,6 +117,12 @@ var btn_close_order_call = document.querySelector('#orderConsultation > .modal_h
 btn_open_request_call.onclick = (() => open(modal_request_call));
 btn_close_request_call.onclick = (() => close(modal_request_call));
 
+for (let btn of btns_open_add_product) {
+  btn.onclick = (() => open(modal_add_product));
+}
+
 btn_open_order_call_mail.onclick = (() => open(modal_order_consultation));
 btn_open_order_call_phone.onclick = (() => open(modal_order_consultation));
 btn_close_order_call.onclick = (() => close(modal_order_consultation));
+
+btn_close_add_product.onclick = (() => close(modal_add_product));

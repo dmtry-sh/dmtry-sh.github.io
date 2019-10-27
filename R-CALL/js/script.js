@@ -170,9 +170,6 @@ for (let item of product_photo_items) {
   }
 }
 
-
-
-
 // =============================== Open/Close modal  ===============================
 function open(modal) {
   modal_bg.style.opacity = '0.878';
