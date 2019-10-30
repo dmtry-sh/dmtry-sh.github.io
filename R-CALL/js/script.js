@@ -124,8 +124,6 @@ for (let benefit of benefits) {
   }
 }
 
-
-
 // =============================== Hide prev benefits item ===============================
 
 var hover = document.querySelectorAll('.hover');
@@ -169,6 +167,25 @@ for (let item of product_photo_items) {
     }
   }
 }
+
+// =============================== Partners slider  ===============================
+
+var container = document.querySelector('.partners_slider > .slider__container');
+var elems = container.querySelectorAll('.partners_icon');
+var elems_num = elems.length;
+
+var p_arrow_right = document.querySelector('.our_partners > .container--big > .right_arrow');
+var p_arrow_left = document.querySelector('.our_partners > .container--big > .left_arrow');
+
+var p_slides = container.querySelectorAll('.partners_icon');
+var p_slider = [];
+
+
+
+
+
+
+
 
 // =============================== Open/Close modal  ===============================
 function open(modal) {
