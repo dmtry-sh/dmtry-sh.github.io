@@ -122,6 +122,8 @@
             <td class="item__total">1 950 руб.</td>
           </tr>
 
+
+
           <tr class="table__item">
             <td class="item__delete"><div class="trash"></div></td>
             <td class="item__photo"><img src="img/product_big.png" alt="Кнопка вызова КСЛ-2"></td>
@@ -172,22 +174,73 @@
 
 </section>
 
-<!--====================== Questions ======================-->
+<!--====================== Checkout ======================-->
 
 <section class="checkout">
   <div class="container--small">
-    <div class="checkout__tables">
+
+    <form class="checkout__tables" action="http://localhost:3000">
       <div class="personal-data">
         <span class="personal-data__text">Персональные данные</span>
+
+        <input type="text" name="name" class="input_name" aria-label="Имя" placeholder="Имя">
+        <div class="name_icon"></div>
+
+        <input type="text" name="phone" class="input_phone" aria-label="Телефон" placeholder="Телефон">
+        <div class="phone_icon"></div>
+
+        <input type="text" name="mail" class="input_mail" aria-label="Почта" placeholder="Почта">
+        <div class="mail_icon"></div>
       </div>
 
       <div class="delivery">
         <span class="delivery__text">Доставка</span>
+
+        <select class="select_delivery_type" name="select_delivery_type" onchange="change_delivery_sum(this)">
+          <option value="pickup">Самовывоз из&nbsp;магазина</option>
+          <option value="city">Доставка по&nbsp;городу</option>
+          <option value="mail">Доставка по&nbsp;почте</option>
+        </select>
+
+        <input type="text" name="address" class="input_address" aria-label="Адрес доставки" placeholder="Адрес доставки">
+        <div class="select_arrow"></div>
+
+        <span class="delivery__payment-text">Способ оплаты</span>
+        <select name="payment" class="select-payment-type">
+          <option value="card">Картой</option>
+          <option value="cash">Наличными</option>
+        </select>
+        <div class="select_arrow"></div>
       </div>
       <div class="total">
 
+        <div class="total__sum">
+          <span class="total__sum__text">Сумма</span>
+          <span class="total__sum__number">0 руб.</span>
+        </div>
+
+        <div class="total__delivery-sum">
+          <span class="total__delivery-sum__text">Самовывоз из магазина:</span>
+          <span class="total__delivery-sum__number">0 руб.</span>
+        </div>
+
+        <div class="total__payable">
+          <span class="total__payable__text">Итого:</span>
+          <span class="total__payable__number">0 руб.</span>
+        </div>
+
+        <div class="total__promo button">Промокод</div>
       </div>
+
+    <div class="checkout__place-order">
+      <div class="place-order__agree">
+        <input id="check" type="checkbox" class="checkbox">
+        <label for="check">Согласен с правилами продажи товаров</label>
+      </div>
+      <input type="submit" class="place-order__button button" value="Оформить заказ">
     </div>
+  </form>
+
   </div>
 </section>
 
