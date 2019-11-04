@@ -63,7 +63,12 @@ function sum(table) {
           insert_sum(parse_items_sum(table), items_sum_element);
           insert_sum(parse_items_sum(table), total_sum_element);
           insert_sum(parse_items_sum(table) + delivery_sum, total_sum_element);
+          if (items_arr.length == 0) {
+            table.classList.add('invisible');
+            document.querySelector('.products-table__no-items').classList.remove('invisible');
+          }
         });
+
       }
 
       item.querySelector('.minus').onclick = function() {
