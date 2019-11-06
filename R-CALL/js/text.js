@@ -10,7 +10,6 @@ for (let item of menu_items){
   }
 }
 
-
 // =============================== Open/Close modal  ===============================
 function open(modal) {
   modal_bg.style.opacity = '0.878';
@@ -37,9 +36,44 @@ var btn_open_order_call_phone = document.querySelector('.contact_us > .btns > .c
 var btn_open_order_call_mail = document.querySelector('.contact_us > .btns > .message');
 var btn_close_order_call = document.querySelector('#orderConsultation > .modal_header > .close');
 
+var filter = modal_order_consultation.querySelector('.filter');
+
+btn_open_order_call_mail.onclick = function () {
+    modal_order_consultation.querySelector('.modal_body').style.height = '435px';
+  modal_order_consultation.querySelector('.order_by_phone').classList.add('invisible');
+  modal_order_consultation.querySelector('.order_by_mail').classList.remove('invisible');
+  filter.querySelector('.filter__list__item:last-child').classList.add('active');
+  filter.querySelector('.filter__list__item:first-child').classList.remove('active');
+  open(modal_order_consultation);
+};
+
+btn_open_order_call_phone.onclick = function() {
+  modal_order_consultation.querySelector('.modal_body').style = null;
+  modal_order_consultation.querySelector('.order_by_phone').classList.remove('invisible');
+  modal_order_consultation.querySelector('.order_by_mail').classList.add('invisible');
+  filter.querySelector('.filter__list__item:last-child').classList.remove('active');
+  filter.querySelector('.filter__list__item:first-child').classList.add('active');
+  open(modal_order_consultation);
+}
+
+filter.querySelector('.filter__list__item:first-child').onclick = function() {
+    modal_order_consultation.querySelector('.modal_body').style = null;
+  modal_order_consultation.querySelector('.order_by_phone').classList.remove('invisible');
+  modal_order_consultation.querySelector('.order_by_mail').classList.add('invisible');
+  filter.querySelector('.filter__list__item:last-child').classList.remove('active');
+  filter.querySelector('.filter__list__item:first-child').classList.add('active');
+}
+
+filter.querySelector('.filter__list__item:last-child').onclick = function() {
+    modal_order_consultation.querySelector('.modal_body').style.height = '435px';
+  modal_order_consultation.querySelector('.order_by_phone').classList.add('invisible');
+  modal_order_consultation.querySelector('.order_by_mail').classList.remove('invisible');
+  filter.querySelector('.filter__list__item:last-child').classList.add('active');
+  filter.querySelector('.filter__list__item:first-child').classList.remove('active');
+}
+
+btn_close_order_call.onclick = (() => close(modal_order_consultation));
+
+
 btn_open_request_call.onclick = (() => open(modal_request_call));
 btn_close_request_call.onclick = (() => close(modal_request_call));
-
-btn_open_order_call_mail.onclick = (() => open(modal_order_consultation));
-btn_open_order_call_phone.onclick = (() => open(modal_order_consultation));
-btn_close_order_call.onclick = (() => close(modal_order_consultation));

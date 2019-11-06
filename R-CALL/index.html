@@ -831,11 +831,11 @@
         <div class="wrapper">
           <div class="input_name">
             <label for="name">Имя</label>
-            <input type="text" id="name" class="name" name="name" placeholder="Иванов Иван">
+            <input type="text" id="r_name" class="name" name="name" placeholder="Иванов Иван">
           </div>
           <div class="input_phone">
             <label for="phone">Телефон</label>
-            <input type="text" id="phone" class="phone" name="phone" placeholder="8 (800) 800 80 80">
+            <input type="text" id="r_phone" class="phone" name="phone" placeholder="8 (800) 800 80 80">
           </div>
         </div>
       </form>
@@ -843,7 +843,7 @@
       будут переданы третьим лицам</span>
       <div class="wrapper">
         <div class="agreement">
-          <input id="agreement" class="checkbox" type="checkbox" name="agreement">
+          <input id="r_agreement" class="checkbox" type="checkbox" name="agreement">
           <label for="agreement">Я даю согласие на обработку моих персональных
           данных</label>
         </div>
@@ -851,7 +851,6 @@
       </div>
     </div>
 </div>
-
 
 <div id="addProduct" class="modal">
   <div class="modal_header">
@@ -883,44 +882,69 @@
 </div>
 
 
-<div id="rightChoose" class="modal">
-  <div class="modal_header">
-    <span>Как выбрать систему вызова?</span>
-    <div class="close"></div>
-  </div>
-  <div class="modal_body">
-    <span class="part1">Система вызова персонала позволяет оперативно оповещать персонал
-      о каких-либо событиях и имеет множество применений, наиболее
-      распространенное из которых – оперативный вызов персонала.
-      Вызов осуществляется с кнопки вызова или пульта вызова и принимается
-      на персональный пейджер сотрудника (официанта, медсестры и.т.д.) или
-      стационарный приемник с отображением информации о месте вызова.</span>
-      <span class="part2">Спектр оборудования системы R-CALL (разнообразные кнопки вызова,
-        приемные и вызывные пульты, пейджеры, ретрансляторы и.т.д.) может
-        решить задачу радиовызова практически на любом объекте.</span>
-      <span>В настоящее время система радиовызова персонала R-CALL
-          обеспечивает вызов:</span>
-          <ul>
-            <li class="list_item">официантов в ресторанах, кафе, барах, клубах, а также информирование официантов о готовности блюд на кухне и напитков на баре;</li>
-            <li class="list_item">медсестер в стационарах и процедурных кабинетах, специалистов в спа-центрах;</li>
-            <li class="list_item">консультантов и продавцов в гипермаркетах и магазинах;</li>
-            <li class="list_item">обслуживающего персонала в отелях, гостиницах;</li>
-            <li class="list_item">мастеров или наладчиков оборудования на производстве;</li>
-            <li class="list_item">помощников руководителей, секретарей, администраторов;</li>
-            <li class="list_item">охраны</li>
-          </ul>
-          <span>и может быть применена в других местах, где требуется
-          оперативный удаленный вызов персонала.</span>
-  </div>
-</div>
-
 <div id="orderConsultation" class="modal">
   <div class="modal_header">
     <span>Заказать консультацию</span>
     <div class="close"></div>
   </div>
   <div class="modal_body">
-    <div class="choose"></div>
+    <div class="filter">
+      <span class="filter__list__item active">По телефону</span>
+      <span class="filter__list__item">По e-mail</span>
+    </div>
+
+    <form class="order_by_phone">
+      <div class="wrapper">
+        <div class="left">
+          <label for="op_name">Имя</label>
+          <input id="op_name" type="text" class="order_input" placeholder="Иванов Иван">
+        </div>
+        <div class="right">
+          <label for="op_phone">Телефон</label>
+          <input id="op_phone" type="text" class="order_input" placeholder="8 (800) 800 800 80">
+        </div>
+      </div>
+      <span class="agreement__text">Ваши контактные данные в безопасности и не
+        будут переданы третьим лицам</span>
+      <div class="wrapper">
+        <div class="left">
+          <input id="op_agreement" type="checkbox">
+          <label class="o_agreement_label" for="op_agreement">Я даю согласие на обработку моих персональных данных</label>
+        </div>
+        <div class="right">
+          <input type="submit" class="o_submit button" value="Заказать">
+        </div>
+      </div>
+    </form>
+
+    <form class="order_by_mail invisible">
+      <div class="wrapper">
+        <div class="left">
+          <label for="om_name">Имя</label>
+          <input id="om_name" type="text" class="order_input" placeholder="Иванов Иван">
+        </div>
+        <div class="right">
+          <label for="om_phone">Телефон</label>
+          <input id="om_phone" type="text" class="order_input" placeholder="8 (800) 800 800 80">
+        </div>
+      </div>
+      <div class="message">
+        <label for="om_message">Ваш вопрос</label>
+        <input id="om_message" type="text" class="order_input" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elitquis">
+      </div>
+      <span class="agreement__text">Ваши контактные данные в безопасности и не
+        будут переданы третьим лицам</span>
+      <div class="wrapper">
+        <div class="left">
+          <input id="om_agreement" type="checkbox">
+          <label class="o_agreement_label" for="om_agreement">Я даю согласие на обработку моих персональных данных</label>
+        </div>
+        <div class="right">
+          <input type="submit" class="o_submit button" value="Заказать">
+        </div>
+      </div>
+    </form>
+
   </div>
 </div>
 

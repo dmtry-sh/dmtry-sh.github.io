@@ -437,8 +437,8 @@
             <span class="contact_phone">8 800 800 8000</span>
             <span class="free_call">(Звонок из Росии бесплатный)</span>
             <div class="btns">
-              <a href="#openOrderConsultation" class="call"></a>
-              <a href="#openOrderConsultation" class="message"></a>
+              <a href="#" class="call"></a>
+              <a href="#" class="message"></a>
             </div>
         </div>
         <img src="img/woman.png" alt="" class="woman">
@@ -452,17 +452,23 @@
         <span class="p_subhead">Наши системы применяются во многих сферах
           деятельности</span>
           <div class="partners_slider">
-            <div class="partners_icon"></div>
-            <div class="partners_icon"></div>
-            <div class="partners_icon"></div>
-            <div class="partners_icon"></div>
-            <div class="partners_icon"></div>
+            <div class="slider__container">
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+              <div class="partners_icon"></div>
+            </div>
           </div>
           <div class="left_arrow"></div>
           <div class="right_arrow"></div>
       </div>
     </div>
-
     <!--====================== Footer ======================-->
     <div class="footer">
       <div class="container--small">
@@ -625,10 +631,66 @@
     <div id="orderConsultation" class="modal">
       <div class="modal_header">
         <span>Заказать консультацию</span>
-        <a href="#close" class="close"></a>
+        <div class="close"></div>
       </div>
       <div class="modal_body">
-        <div class="choose"></div>
+        <div class="filter">
+          <span class="filter__list__item active">По телефону</span>
+          <span class="filter__list__item">По e-mail</span>
+        </div>
+
+        <form class="order_by_phone">
+          <div class="wrapper">
+            <div class="left">
+              <label for="op_name">Имя</label>
+              <input id="op_name" type="text" class="order_input" placeholder="Иванов Иван">
+            </div>
+            <div class="right">
+              <label for="op_phone">Телефон</label>
+              <input id="op_phone" type="text" class="order_input" placeholder="8 (800) 800 800 80">
+            </div>
+          </div>
+          <span class="agreement__text">Ваши контактные данные в безопасности и не
+            будут переданы третьим лицам</span>
+          <div class="wrapper">
+            <div class="left">
+              <input id="op_agreement" type="checkbox">
+              <label class="o_agreement_label" for="op_agreement">Я даю согласие на обработку моих персональных данных</label>
+            </div>
+            <div class="right">
+              <input type="submit" class="o_submit button" value="Заказать">
+            </div>
+          </div>
+        </form>
+
+        <form class="order_by_mail invisible">
+          <div class="wrapper">
+            <div class="left">
+              <label for="om_name">Имя</label>
+              <input id="om_name" type="text" class="order_input" placeholder="Иванов Иван">
+            </div>
+            <div class="right">
+              <label for="om_phone">Телефон</label>
+              <input id="om_phone" type="text" class="order_input" placeholder="8 (800) 800 800 80">
+            </div>
+          </div>
+          <div class="message">
+            <label for="om_message">Ваш вопрос</label>
+            <input id="om_message" type="text" class="order_input" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elitquis">
+          </div>
+          <span class="agreement__text">Ваши контактные данные в безопасности и не
+            будут переданы третьим лицам</span>
+          <div class="wrapper">
+            <div class="left">
+              <input id="om_agreement" type="checkbox">
+              <label class="o_agreement_label" for="om_agreement">Я даю согласие на обработку моих персональных данных</label>
+            </div>
+            <div class="right">
+              <input type="submit" class="o_submit button" value="Заказать">
+            </div>
+          </div>
+        </form>
+
       </div>
     </div>
 

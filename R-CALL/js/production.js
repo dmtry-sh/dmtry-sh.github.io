@@ -121,8 +121,44 @@ for (let btn of btns_open_add_product) {
   btn.onclick = (() => open(modal_add_product));
 }
 
-btn_open_order_call_mail.onclick = (() => open(modal_order_consultation));
-btn_open_order_call_phone.onclick = (() => open(modal_order_consultation));
+var filter = modal_order_consultation.querySelector('.filter');
+
+btn_open_order_call_mail.onclick = function () {
+    modal_order_consultation.querySelector('.modal_body').style.height = '435px';
+  modal_order_consultation.querySelector('.order_by_phone').classList.add('invisible');
+  modal_order_consultation.querySelector('.order_by_mail').classList.remove('invisible');
+  filter.querySelector('.filter__list__item:last-child').classList.add('active');
+  filter.querySelector('.filter__list__item:first-child').classList.remove('active');
+  open(modal_order_consultation);
+};
+
+btn_open_order_call_phone.onclick = function() {
+  modal_order_consultation.querySelector('.modal_body').style = null;
+  modal_order_consultation.querySelector('.order_by_phone').classList.remove('invisible');
+  modal_order_consultation.querySelector('.order_by_mail').classList.add('invisible');
+  filter.querySelector('.filter__list__item:last-child').classList.remove('active');
+  filter.querySelector('.filter__list__item:first-child').classList.add('active');
+  open(modal_order_consultation);
+}
+
+filter.querySelector('.filter__list__item:first-child').onclick = function() {
+    modal_order_consultation.querySelector('.modal_body').style = null;
+  modal_order_consultation.querySelector('.order_by_phone').classList.remove('invisible');
+  modal_order_consultation.querySelector('.order_by_mail').classList.add('invisible');
+  filter.querySelector('.filter__list__item:last-child').classList.remove('active');
+  filter.querySelector('.filter__list__item:first-child').classList.add('active');
+}
+
+filter.querySelector('.filter__list__item:last-child').onclick = function() {
+    modal_order_consultation.querySelector('.modal_body').style.height = '435px';
+  modal_order_consultation.querySelector('.order_by_phone').classList.add('invisible');
+  modal_order_consultation.querySelector('.order_by_mail').classList.remove('invisible');
+  filter.querySelector('.filter__list__item:last-child').classList.add('active');
+  filter.querySelector('.filter__list__item:first-child').classList.remove('active');
+}
+
 btn_close_order_call.onclick = (() => close(modal_order_consultation));
+
+
 
 btn_close_add_product.onclick = (() => close(modal_add_product));
