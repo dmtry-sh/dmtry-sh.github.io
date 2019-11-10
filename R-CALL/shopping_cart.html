@@ -203,9 +203,8 @@
         <span class="delivery__text">Доставка</span>
 
         <select class="select_delivery_type" name="select_delivery_type" onchange="change_delivery_sum(this)">
-          <option value="pickup">Самовывоз из&nbsp;магазина</option>
-          <option value="city">Доставка по&nbsp;городу</option>
-          <option value="mail">Доставка по&nbsp;почте</option>
+          <option value="door">Доставка до двери</option>
+          <option value="city">Доставка до склада</option>
         </select>
 
         <input type="text" name="address" class="input_address" aria-label="Адрес доставки" placeholder="Адрес доставки">
@@ -213,8 +212,7 @@
 
         <span class="delivery__payment-text">Способ оплаты</span>
         <select name="payment" class="select-payment-type">
-          <option value="card">Картой</option>
-          <option value="cash">Наличными</option>
+          <option value="bank">Перечисление на счёт</option>
         </select>
         <div class="select_arrow"></div>
       </div>
@@ -226,8 +224,8 @@
         </div>
 
         <div class="total__delivery-sum">
-          <span class="total__delivery-sum__text">Самовывоз из магазина:</span>
-          <span class="total__delivery-sum__number">0 руб.</span>
+          <span class="total__delivery-sum__text">Доставка до двери:</span>
+          <span class="total__delivery-sum__number">Уточняется при заказе</span>
         </div>
 
         <div class="total__payable">

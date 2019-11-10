@@ -27,23 +27,6 @@ function change_delivery_sum(select) {
   let idx = select.options.selectedIndex;
   let text = select.options[idx].text;
   document.querySelector('.total__delivery-sum__text').innerHTML = text + ':';
-  switch (idx) {
-    case 0:
-      delivery_sum = 0;
-      insert_sum(delivery_sum, delivery_sum_element);
-      insert_sum(parse_items_sum(table) + delivery_sum, total_sum_element);
-      break;
-    case 1:
-      delivery_sum = 700;
-      insert_sum(delivery_sum, delivery_sum_element);
-      insert_sum(parse_items_sum(table) + delivery_sum, total_sum_element);
-      break;
-    case 2:
-      delivery_sum = 1200;
-      insert_sum(delivery_sum, delivery_sum_element);
-      insert_sum(parse_items_sum(table) + delivery_sum, total_sum_element);
-      break;
-  }
 }
 
 

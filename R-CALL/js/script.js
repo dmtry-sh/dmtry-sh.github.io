@@ -137,53 +137,119 @@ function hide(hover, hidden) {
 for (i = 0; i < hover.length; i++){
   hide(hover[i], hidden[i]);
 };
-//================================== Product color__list__item =======================
 
-var color_list_items = document.querySelectorAll('.product__color > .color__list > .color__list__item');
-for (let item of color_list_items){
-  item.onclick = function () {
-    item.classList.add('color__list__item--active');
-    for (let other_item of color_list_items) {
-      if (other_item.classList.contains('color__list__item--active')&&
-      other_item.className != item.className) {
-        other_item.classList.remove('color__list__item--active');
+//================================== Product slider =============================
+
+var main_container = document.querySelector('.product .product__slider');
+var product_slider_items = main_container.querySelectorAll('.product__inner');
+var mp_shift = 0;
+var slide_width = main_container.offsetWidth;
+var mp_arrow_right = document.querySelector('.p_arrow_right');
+var mp_arrow_left = document.querySelector('.p_arrow_left');
+
+mp_arrow_right.onclick = function() {
+  mp_shift++;
+  if (mp_shift <= product_slider_items.length-1){
+    main_container.style.left = -(mp_shift * slide_width) + 'px';
+    mp_arrow_left.classList.remove('invisible');
+  }
+  if (mp_shift == product_slider_items.length-1) {
+    mp_arrow_right.classList.add('invisible');
+  }
+}
+
+mp_arrow_left.onclick = function() {
+
+  if (mp_shift > 0) {
+    mp_shift--;
+    main_container.style.left = -(mp_shift * slide_width)+'px';
+    mp_arrow_right.classList.remove('invisible');
+  }
+  if (mp_shift == 0){
+    mp_arrow_left.classList.add('invisible');
+  }
+}
+
+var photo_width = 80;
+var margin = 29;
+
+
+for (let product__inner of product_slider_items){
+  let main_product_photo = product__inner.querySelector('.product__photo > .photo');
+  let product_photo_items = product__inner.querySelectorAll('.slider__container > .photo__slider__item');
+
+  for (let item of product_photo_items) {
+    item.onclick = function() {
+      main_product_photo.src = item.querySelector('img').src;
+      for (let other_item of product_photo_items) {
+        other_item.classList.remove('photo__slider__item--active');
+      }
+      item.classList.add('photo__slider__item--active');
+    }
+  }
+
+  let container = product__inner.querySelector('.photo__slider .slider__container');
+
+  let max_shift = -(product_photo_items.length - 4) * (photo_width + margin);
+  let shift = 0;
+
+  let arrow_right = product__inner.querySelector('.photo__slider > .arrow_right');
+  let arrow_left = product__inner.querySelector('.photo__slider > .arrow_left');
+
+  arrow_right.onclick = function() {
+    if (shift > max_shift){
+      shift = shift - (photo_width + margin);
+      container.style.left = shift + 'px';
+      if (shift <= max_shift) {
+        arrow_right.classList.add('invisible');
+        product__inner.querySelector('.photo__slider').style.borderRight = 'none';
+      } else {
+        arrow_left.classList.remove('invisible');
+        arrow_right.classList.remove('invisible');
+        product__inner.querySelector('.photo__slider').style = null;
+      }
+    }
+  }
+
+  arrow_left.onclick = function() {
+    if (shift < 0) {
+      shift = shift + (photo_width + margin);
+      container.style.left = shift + 'px';
+    }
+    if (shift < 0) {
+      arrow_left.classList.remove('invisible');
+      arrow_right.classList.remove('invisible');
+      product__inner.querySelector('.photo__slider').style = null;
+    } else {
+      arrow_left.classList.add('invisible');
+    }
+  }
+
+  let color_list_items = product__inner.querySelectorAll('.product__color > .color__list > .color__list__item');
+  for (let item of color_list_items){
+    item.onclick = function () {
+      item.classList.add('color__list__item--active');
+      for (let other_item of color_list_items) {
+        if (other_item.classList.contains('color__list__item--active')&&
+        other_item.className != item.className) {
+          other_item.classList.remove('color__list__item--active');
+        }
       }
     }
   }
 }
 
-//================================== product__list__item  active =======================
-
-var main_product_photo = document.querySelector('.product__photo > .photo');
-var product_photo_items = document.querySelectorAll('.product__list > .product__list__item');
-for (let item of product_photo_items) {
-  item.onclick = function() {
-    item.classList.add('product__list__item--active');
-    main_product_photo.src = item.querySelector('img').src;
-    for (let other_item of product_photo_items) {
-      if (other_item.querySelector('img').src != item.querySelector('img').src) {
-        other_item.classList.remove('product__list__item--active');
-      }
-    }
-  }
-}
 
 // =============================== Partners slider  ===============================
 
-var container = document.querySelector('.partners_slider > .slider__container');
-var elems = container.querySelectorAll('.partners_icon');
+var p_container = document.querySelector('.partners_slider > .slider__container');
+var elems = p_container.querySelectorAll('.partners_icon');
 var elems_num = elems.length;
 
 var p_arrow_right = document.querySelector('.our_partners > .container--big > .right_arrow');
 var p_arrow_left = document.querySelector('.our_partners > .container--big > .left_arrow');
 
-var p_slides = container.querySelectorAll('.partners_icon');
-var p_slider = [];
-
-
-
-
-
+var p_slides = p_container.querySelectorAll('.partners_icon');
 
 
 
@@ -210,7 +276,7 @@ var modal_order_consultation = document.querySelector('#orderConsultation');
 var btn_open_request_call = document.querySelector('.phone .call');
 var btn_close_request_call = document.querySelector('#requestCall > .modal_header > .close');
 
-var btn_open_add_product = document.querySelector('.add.button');
+var btns_open_add_product = document.querySelectorAll('.add.button');
 var btn_close_add_product = document.querySelector('#addProduct > .modal_header > .close');
 
 var btn_open_order_call_phone = document.querySelector('.contact_us > .btns > .call');
@@ -223,7 +289,9 @@ var btn_close_order_call = document.querySelector('#orderConsultation > .modal_h
 btn_open_request_call.onclick = (() => open(modal_request_call));
 btn_close_request_call.onclick = (() => close(modal_request_call));
 
-btn_open_add_product.onclick = (() => open(modal_add_product));
+for (let btn of btns_open_add_product) {
+  btn.onclick = (() => open(modal_add_product));
+}
 btn_close_add_product.onclick = (() => close(modal_add_product));
 
 var filter = modal_order_consultation.querySelector('.filter');
