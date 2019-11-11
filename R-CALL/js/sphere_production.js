@@ -32,6 +32,43 @@ for (let item of filter_items) {
     }
   }
 }
+
+// =============================== Partners slider  ===============================
+
+var p_container = document.querySelector('.partners_slider > .slider__container');
+var p_container_length = p_container.querySelectorAll('.partners_icon').length;
+
+var p_arrow_right = document.querySelector('.our_partners > .container--big > .right_arrow');
+var p_arrow_left = document.querySelector('.our_partners > .container--big > .left_arrow');
+
+var p_max_shift = p_container_length - 5;
+var p_shift = 0;
+
+var p_width = 170;
+var p_margin = 73;
+
+p_arrow_right.onclick = function() {
+  if (p_shift < p_max_shift) {
+    p_shift++;
+    p_container.style.left = - p_shift * (170 + 73) + 'px';
+    p_arrow_left.classList.remove('invisible');
+  }
+  if (p_shift == p_max_shift) {
+    p_arrow_right.classList.add('invisible');
+  }
+}
+
+p_arrow_left.onclick = function() {
+  if (p_shift > 0) {
+    p_shift--;
+    p_container.style.left = - p_shift * (170 + 73) + 'px';
+    p_arrow_right.classList.remove('invisible');
+  }
+  if (p_shift == 0) {
+    p_arrow_left.classList.add('invisible');
+  }
+}
+
 // =============================== Open/Close modal  ===============================
 function open(modal) {
   modal_bg.style.opacity = '0.878';
