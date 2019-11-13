@@ -2847,9 +2847,16 @@ nav.menu > .container--small {
 }
 
 .panel__item__photo__container > img {
+	object-fit: contain;
 	width: 260px;
-	height: 215px;
+	height: 180px;
+	margin-top: 30px;
 	float: left;
+}
+
+.panel__item__photo__container.holders > img {
+	height: 120px;
+	margin-top: 40px;
 }
 
 .panel__item__title {
@@ -3330,6 +3337,7 @@ box-shadow: 6px 36px 26px -31px rgba(0,0,0,0.75);
 	width: 100%;
 	height: 435px;
 	border: 1px solid #eee;
+	object-fit: contain;
 
 }
 
@@ -3383,6 +3391,7 @@ box-shadow: 6px 36px 26px -31px rgba(0,0,0,0.75);
 .photo__slider__item img {
 	height: 76.923%;
 	width: 100%;
+	object-fit: contain;
 }
 
 .invisible {
