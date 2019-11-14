@@ -91,6 +91,7 @@ for (let pair_item of pair) {
 }
 // =============================== Button type select ===============================
 var types = document.querySelectorAll('.types__item');
+var main_photo_text = document.querySelector('.photo__type');
 var pairs = [];
 
 for (i = 0; i < types.length; i++) {
@@ -108,6 +109,7 @@ pairs.forEach(function(item) {
     }
     item.photo.classList.add('photo__slider__item--active');
     main_photo.src = item.photo.querySelector('img').src;
+    main_photo_text.textContent = item.type.textContent;
   })
 
   item.photo.addEventListener('click', function() {
@@ -120,6 +122,7 @@ pairs.forEach(function(item) {
       other_type.classList.remove('active');
     }
     item.type.classList.add('active');
+    main_photo_text.textContent = item.type.textContent;
   })
 
 })

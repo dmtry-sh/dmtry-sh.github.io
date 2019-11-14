@@ -3328,9 +3328,20 @@ box-shadow: 6px 36px 26px -31px rgba(0,0,0,0.75);
 	-webkit-flex-direction: column;
 	-ms-flex-direction: column;
 	flex-direction: column;
+	position: relative;
 
 	height: 610px;
 	width: 435px;
+}
+
+.product-description__photo .photo__type {
+	position: absolute;
+	bottom: 190px;
+	left: 179.5px;
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color: #444;
 }
 
 .product-description__photo > img {
