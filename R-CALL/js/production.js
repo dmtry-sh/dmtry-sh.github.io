@@ -13,10 +13,13 @@ for (let item of menu_items){
 
 // =============================== showcase__panel__photo  ===============================
 
+var cards = document.querySelectorAll('.showcase__panel__item');
 var photo_containers = document.getElementsByClassName('panel__item__photo');
 
-for (let item of photo_containers) {
-  item.querySelector('.arrow_right').onclick = function() {
+for (let item of cards) {
+
+  item.querySelector('.arrow_right').addEventListener('click', function(event) {
+    event.preventDefault();
     let container = item.querySelector('.panel__item__photo__container');
     let min_shift = -(container.querySelectorAll('img').length - 1);
     let photo_width = container.querySelector('img').width;
@@ -37,9 +40,10 @@ for (let item of photo_containers) {
         item.querySelector('.arrow_right').classList.add('unactive');
       }
     }
-  }
+  });
 
-  item.querySelector('.arrow_left').onclick = function() {
+  item.querySelector('.arrow_left').addEventListener('click', function(event) {
+    event.preventDefault();
     let container = item.querySelector('.panel__item__photo__container');
     let max_shift = 0;
     let min_shift = -(container.querySelectorAll('img').length - 1);
@@ -62,7 +66,12 @@ for (let item of photo_containers) {
     if (shift != min_shift) {
       item.querySelector('.arrow_right').classList.remove('unactive');
     }
-  }
+  });
+
+  item.querySelector('.panel__item__count').addEventListener('click', (event) => event.preventDefault());
+  item.querySelector('.panel__item__buy').addEventListener('click', (event) => event.preventDefault());
+
+
 }
 // =============================== showcase__panel__item__count  ===============================
 
