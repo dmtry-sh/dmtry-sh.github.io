@@ -85,6 +85,12 @@ function sum(table) {
 
 sum(table);
 
+// ============================ validation ===============================
+
+
+
+
+// ========================= open/close modal ===============================
 
 function open(modal) {
   modal_bg.style.opacity = '0.878';

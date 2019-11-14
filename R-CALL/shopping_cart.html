@@ -188,13 +188,13 @@
       <div class="personal-data">
         <span class="personal-data__text">Персональные данные</span>
 
-        <input type="text" name="name" class="input_name" aria-label="Имя" placeholder="Имя">
+        <input type="text" name="name" class="input_name" aria-label="Имя" placeholder="Имя" required>
         <div class="name_icon"></div>
 
-        <input type="text" name="phone" class="input_phone" aria-label="Телефон" placeholder="Телефон">
+        <input type="text" name="phone" class="input_phone" aria-label="Телефон" placeholder="Телефон" required>
         <div class="phone_icon"></div>
 
-        <input type="text" name="mail" class="input_mail" aria-label="Почта" placeholder="Почта">
+        <input type="email" name="mail" class="input_mail" aria-label="Почта" placeholder="Почта" required>
         <div class="mail_icon"></div>
       </div>
 
@@ -206,7 +206,7 @@
           <option value="city">Доставка до склада</option>
         </select>
 
-        <input type="text" name="address" class="input_address" aria-label="Адрес доставки" placeholder="Адрес доставки">
+        <input type="text" name="address" class="input_address" aria-label="Адрес доставки" placeholder="Адрес доставки" required>
         <div class="select_arrow"></div>
 
         <span class="delivery__payment-text">Способ оплаты</span>
@@ -237,7 +237,7 @@
 
     <div class="checkout__place-order">
       <div class="place-order__agree">
-        <input id="check" type="checkbox" class="checkbox">
+        <input id="check" type="checkbox" class="checkbox" required>
         <label for="check">Согласен с правилами продажи товаров</label>
       </div>
       <input type="submit" class="place-order__button button" value="Оформить заказ">
@@ -351,24 +351,24 @@
             <div class="wrapper">
               <div class="input_name">
                 <label for="name">Имя</label>
-                <input type="text" id="name" class="name" name="name" placeholder="Иванов Иван">
+                <input type="text" id="name" class="name" name="name" placeholder="Иванов Иван" required>
               </div>
               <div class="input_phone">
                 <label for="phone">Телефон</label>
-                <input type="text" id="phone" class="phone" name="phone" placeholder="8 (800) 800 80 80">
+                <input type="text" id="phone" class="phone" name="phone" placeholder="8 (800) 800 80 80" required>
               </div>
             </div>
-          </form>
           <span class="contact_data">Ваши контактные данные в безопасности и не
           будут переданы третьим лицам</span>
           <div class="wrapper">
             <div class="agreement">
-              <input id="agreement" class="checkbox" type="checkbox" name="agreement">
+              <input id="agreement" class="checkbox" type="checkbox" name="agreement" required>
               <label for="agreement">Я даю согласие на обработку моих персональных
               данных</label>
             </div>
             <input class="button" type="submit" value="Отправить">
           </div>
+        </form>
         </div>
     </div>
 

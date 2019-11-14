@@ -5026,6 +5026,7 @@ margin-left: 0;
 	margin-right: 28px;
 	margin-top: 45px;
 	margin-left: auto;
+	visibility: hidden;
 }
 
 .checkout__place-order {
