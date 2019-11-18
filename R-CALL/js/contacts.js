@@ -13,11 +13,11 @@ for (let item of menu_items){
 // =============================== Open/Close modal  ===============================
 
 var modal_bg = document.querySelector('.modal_background');
-var modal_request_call = document.querySelector('#openRequestCall');
-var order_consultation = document.querySelector('#openOrderConsultation');
+var modal_request_call = document.querySelector('#requestCall');
+var order_consultation = document.querySelector('#orderConsultation');
 
 var btn_open_request_call = document.querySelector('.phone .call');
-var btn_close_request_call = document.querySelector('#openRequestCall > .modal_header > .close');
+var btn_close_request_call = document.querySelector('#requestCall > .modal_header > .close');
 
 
 function open(modal) {
@@ -43,7 +43,7 @@ var btn_close_order_call = document.querySelector('#orderConsultation > .modal_h
 btn_open_request_call.onclick = (() => open(modal_request_call));
 btn_close_request_call.onclick = (() => close(modal_request_call));
 
-vvar filter = modal_order_consultation.querySelector('.filter');
+var filter = modal_order_consultation.querySelector('.filter');
 
 btn_open_order_call_mail.onclick = function () {
     modal_order_consultation.querySelector('.modal_body').style.height = '435px';
