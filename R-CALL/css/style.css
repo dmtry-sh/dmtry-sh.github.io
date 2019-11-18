@@ -1,4 +1,5 @@
 @font-face {
+	font-display: swap;
 	font-family: 'Montserrat-Bold';
 	src: url('../fonts/Montserrat-Bold.eot');
 	src: local('Montserrat Bold'), local('Montserrat-Bold'),
@@ -10,6 +11,7 @@
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Montserrat-Regular';
 	src: url('../fonts/Montserrat-Regular.eot');
 	src: local('Montserrat Regular'), local('Montserrat-Regular'),
@@ -21,6 +23,7 @@
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Montserrat-SemiBold';
 	src: url('../fonts/Montserrat-SemiBold.eot');
 	src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
@@ -54,11 +57,16 @@ body {
   margin: 0 auto;
 }
 
+@media (min-width: 768px) and (max-width: 1380px) {
+	.container--big {
+		width: 98%;
+	}
+}
 
 /*==================== Button ====================*/
 
 .button {
-	text-decoration: none;
+  text-decoration: none;
   box-sizing: border-box;
   border: 2px solid #2a86ff;
   display: -webkit-flex;
