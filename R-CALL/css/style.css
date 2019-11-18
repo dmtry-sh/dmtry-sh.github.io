@@ -4512,6 +4512,9 @@ margin-left: 0;
 	position: absolute;
 	right: 0;
 	bottom: 1px;
+	width: 717px;
+	height: 717px;
+	background-image: url('../img/woman.png');
 	user-select: none;
 	z-index: 0;
 }
