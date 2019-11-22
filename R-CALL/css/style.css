@@ -311,14 +311,15 @@ header {
   height: 100px;
 }
 
-.logo > a {
+.logo a {
   display: block;
   height: 100%;
   width: 100%;
+}
 
-  background-image: url('../img/logo.png');
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
+.logo img {
+	width: 290px;
+	height: 100px;
 }
 
 .info > .container--small > .phone {
@@ -2130,7 +2131,7 @@ nav.menu > .container--small {
 	color: #fff;
 }
 
-.text_title__description > span {
+.text_title__description p {
 	box-sizing: border-box;
 	display: inline-block;
 	width: 640px;
@@ -3050,6 +3051,7 @@ nav.menu > .container--small {
 
 .info_content {
 	height: 2177px;
+	overflow: hidden;
 }
 
 .info_content > .container--small {
