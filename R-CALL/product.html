@@ -562,7 +562,7 @@
 </section>
 
 <!--====================== Footer ======================-->
-<div class="footer">
+<footer class="footer">
   <div class="container--small">
     <div class="footer_content">
       <div class="contacts">
@@ -585,49 +585,50 @@
         <span class="head">Информация для клиентов</span>
         <div class="lists">
           <ul class="list_left">
-            <a href="#"><li>Главная</li></a>
-            <a href="prodaction.html"><li>Продукция</li></a>
-            <a href=""><li>Решения</li></a>
-            <a href=""><li>Гарантия</li></a>
-            <a href=""><li>Доставка и оплата</li></a>
-            <a href=""><li>Поддержка</li></a>
-            <a href=""><li>О компании</li></a>
-            <a href="contacts.html"><li>Контакты</li></a>
-            <a href=""><li>Карта сайта</li></a>
-            <a href=""><li>Положение об обработке персональных данных</li></a>
+            <li><a href="">Главная</a></li>
+            <li><a href="">Продукция</a></li>
+            <li><a href="">Решения</a></li>
+            <li><a href="">Гарантия</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+            <li><a href="">Поддержка</a></li>
+            <li><a href="">О компании</a></li>
+            <li><a href="">Контакты</a></li>
+            <li><a href="">Карта сайта</a></li>
+            <li><a href="">Положение об обработке персональных данных</a></li>
           </ul>
           <ul class="list_right">
-            <a href=""><li>Кнопка вызова секретаря</li></a>
-            <a href=""><li>Кнопка вызова персонала</li></a>
-            <a href=""><li>Система вызова персонала</li></a>
-            <a href=""><li>Беспроводная система вызова</li></a>
-            <a href=""><li>Кнопка вызова для инвалидов</li></a>
-            <a href=""><li>Кнопка вызова официанта</li></a>
-            <a href=""><li>Кнопка: система вызова медперсонала</li></a>
-            <a href=""><li>Система вызова официантов</li></a>
-            <a href=""><li>Пейджер персонала: официанта и медсестры</li></a>
+            <li><a href="">Кнопка вызова секретаря</a></li>
+            <li><a href="">Кнопка вызова персонала</a></li>
+            <li><a href="">Система вызова персонала</a></li>
+            <li><a href="">Беспроводная система вызова</a></li>
+            <li><a href="">Кнопка вызова для инвалидов</a></li>
+            <li><a href="">Кнопка вызова официанта</a></li>
+            <li><a href="">Кнопка: система вызова медперсонала</a></li>
+            <li><a href="">Система вызова официантов</a></li>
+            <li><a href="">Пейджер персонала: официанта и медсестры</a></li>
           </ul>
         </div>
       </div>
       <div class="contact_form">
         <span class="head">Напишите нам</span>
         <form class="questions_form" action="http://localhost:3000/">
-          <input class="input_name" type="text" name="name" placeholder="Имя">
+          <input class="input_name" type="text" name="name" placeholder="Имя" required>
           <div class="name_icon"></div>
-          <input class="input_mail" type="text" name="mail" placeholder="Почта">
+          <input class="input_mail" type="email" name="mail" placeholder="Почта" required>
           <div class="mail_icon"></div>
-          <textarea class="input_message" name="message" placeholder="Ваше сообщение"></textarea>
+          <textarea class="input_message" name="message" placeholder="Ваше сообщение" required></textarea>
           <div class="message_icon"></div>
           <input class="button" type="submit" value="Отправить сообщение">
         </form>
       </div>
     </div>
   </div>
-</div>
+
 <div class="copyrights">
   <span>Copyright © 2005 - 2018</span>&nbsp;<span class="underline">R-CALL -
     система вызова нового поколения</span><span>. Все права защищены.</span>
 </div>
+</footer>
 
 <!--====================== Modal ======================-->
 <div id="requestCall" class="modal">

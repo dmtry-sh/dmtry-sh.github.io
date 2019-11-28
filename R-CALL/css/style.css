@@ -5112,7 +5112,6 @@ margin-left: 0;
 /*==================== Footer ====================*/
 
 .footer {
-	height: 590px;
 	background-color: #1a1a55;
 	padding-top: 60px;
 }
@@ -5140,7 +5139,7 @@ margin-left: 0;
 	background-image: url('../img/icons/world_map.png');
 }
 
-.footer_content > .contacts {
+.footer_content .contacts {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
@@ -5152,7 +5151,7 @@ margin-left: 0;
 	width: 200px;
 }
 
-.footer_content > .contacts > .head {
+.footer_content .contacts .head {
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-weight: bold;
 	font-size: 18px;
@@ -5160,30 +5159,30 @@ margin-left: 0;
 	text-transform: uppercase;
 }
 
-.footer_content > .contacts > .address {
+.footer_content .contacts .address {
 	margin-top: 45px;
 }
 
-.footer_content > .contacts > .show_map {
+.footer_content .contacts .show_map {
 	position: relative;
 	z-index: 1;
 	margin-top: 20px;
 	color: #2a86ff;
 }
 
-.footer_content > .contacts > .mail_sale {
+.footer_content .contacts .mail_sale {
 	margin-top: 45px;
 }
 
-.footer_content > .contacts > .support {
+.footer_content .contacts .support {
 	margin-top: 15px;
 }
 
-.footer_content > .contacts > .phone_sale {
+.footer_content .contacts .phone_sale {
 	margin-top: 40px;
 }
 
-.footer_content > .contacts > .phone_support {
+.footer_content .contacts .phone_support {
 	margin-top: 12px;
 }
 
@@ -5198,7 +5197,7 @@ margin-left: 0;
 	align-items: center;
 }
 
-.f_social > a {
+.f_social a {
 	display: block;
 	width: 21px;
 	height: 16px;
@@ -5207,16 +5206,16 @@ margin-left: 0;
 	background-position: center;
 }
 
-.f_social > .vk {
+.f_social .vk {
 	background-image: url('../img/social/vk_hover.png');
 }
 
-.f_social > .fb {
+.f_social .fb {
 	background-size: contain;
 	background-image: url('../img/social/fb_hover.png');
 }
 
-.f_social > .youtube {
+.f_social .youtube {
 	background-image: url('../img/social/yt_hover.png');
 }
 
@@ -5224,7 +5223,7 @@ margin-left: 0;
 	margin-left: 45px;
 }
 
-.clients_info > .head {
+.clients_info .head {
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-weight: bold;
 	font-size: 18px;
@@ -5232,7 +5231,7 @@ margin-left: 0;
 	text-transform: uppercase;
 }
 
-.clients_info > .lists {
+.clients_info .lists {
 	margin-top: 45px;
 	width: 465px;
 	display: -webkit-flex;
@@ -5241,26 +5240,41 @@ margin-left: 0;
 	justify-content: space-between;
 }
 
-.list_left > a,
-.list_right > a {
-	text-decoration: none;
-	color: #fff;
-	list-style: url('../img/icons/list_pointer.png');
-	position: relative;
+.list_left {
+	width: 250px;
 }
 
-.list_left > a > li,
-.list_right > a > li {
+.list_right {
+	width: 260px;
+}
+
+.list_left li,
+.list_right li {
+	display: list-item;
 	margin-top: 13px;
 	padding-left: 10px;
+	list-style: url('../img/icons/list_pointer.png');
+	position: relative;
+	vertical-align: top;
 }
 
-.list_left > a:first-child > li:first-child {
+.list_left li a,
+.list_right li a {
+	height: 100%;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	transition: all .3s ease;
+}
+
+.list_left li:first-child,
+.list_right li:first-child {
 	margin-top: 0;
 }
 
-.list_right > a:first-child > li:first-child {
-	margin-top: 0;
+.list_right li a:hover,
+.list_left li a:hover{
+	padding-left: 10px;
 }
 
 
@@ -5372,6 +5386,7 @@ margin-left: 0;
 /*==================== Copyrights ====================*/
 
 .copyrights {
+	margin-top: 50px;
 	box-sizing: border-box;
 	height: 58px;
 	background-color: #0e0e4d;
