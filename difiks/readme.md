@@ -1,3 +1,0 @@
-Difiks
-
-Dari's website
