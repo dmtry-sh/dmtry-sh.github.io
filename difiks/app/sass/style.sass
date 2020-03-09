@@ -14,6 +14,18 @@ ul
   margin: 0
   padding: 0
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none;
+  margin: 0;
+
+input:focus
+  outline: none
+
+
+input[type=number] 
+  -moz-appearance: textfield;
+
 
 body
   height: 100vh
@@ -22,17 +34,19 @@ body
   flex-direction: column
   justify-content: space-between
 
+.container
+  margin: 0 50px
+  display: flex
+  height: 100%
+
+
+
+  /* ============ Header ============ */
 
 .header
   width: 100%
   font-family: $mons
   font-size: 16px
-
-
-.container
-  margin: 0 50px
-  display: flex
-  height: 100%
 
 .logo
   margin-top: 25px
@@ -94,22 +108,24 @@ body
 .footer
   display: flex
   justify-content: flex-start
-
   a
     margin-right: 40px
     margin-bottom: 40px
-    
     img
       width: 20px
       height: 20px
       object-fit: contain
 
+
+/* ============ Main ============ */
 main
   height: 100%
+
+/* ============ Slider ============ */
   
 .slider
   position: relative
-  height: 540px
+  height: 100%
   width: 100%
   overflow: hidden
   display: flex
@@ -124,7 +140,8 @@ main
     border-color: transparent #8798ab transparent transparent
     margin-right: 22.5px
     cursor: pointer
-    margin-bottom: 20px
+    margin-bottom: 70px
+    z-index: 1
   .next
     width: 0
     height: 0
@@ -133,7 +150,8 @@ main
     border-color: transparent transparent transparent #000
     margin-left: 22.5px
     cursor: pointer
-    margin-bottom: 20px
+    margin-bottom: 70px
+    z-index: 1
 
 .slider__container
   position: absolute
@@ -141,16 +159,20 @@ main
   left: 0
   display: flex
   width: 400%
+  height: 100%
   transition: left .9s ease
   
+/* ============ Slide ============ */
 
 .slide
   box-sizing: border-box
-  height: 484px
+  height: 80%
   display: flex
   justify-content: center
   width: 25%
   border: 2px solid #d7d7d7;
+  position: relative
+  font-family: $mons
   &.hello
     border: none;
     .photo
@@ -158,6 +180,8 @@ main
       border-left: none
       &:last-child
         border-left: none
+      &:first-child
+        transform: rotateX(2px)
   .photo
     box-sizing: border-box
     width: 32%
@@ -165,14 +189,27 @@ main
     justify-content: center
     align-items: center
     padding: 30px
-    &:last-child
+    &:last-of-type
       border-left: 2px solid #d7d7d7
     img
       width: 100%
       height: 100%
       object-fit: contain
+  .watch
+    display: block
+    position: absolute
+    left: 75px
+    bottom: -7px
+    background-color: #fff
+    padding: 0 15px
+    z-index: 1
+    font-size: 14px
+    line-height: 17px
+    color: $gray_text
+    text-decoration: none
 
-.me
+
+.slide__content
   display: flex
   flex-direction: column
   justify-content: center
@@ -180,18 +217,65 @@ main
   width: 515px
   margin-right: 15px
   margin-left: 35px
-
-  h1
+  &.me
+    h1
+      font-size: 36px
+      line-height: 44px
+      font-weight: normal
+      background: linear-gradient(160deg, #FB5F5F 0%, #6241FF 49.34%, #5987F0 100%)
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #FB5F5F;
+  a
+    text-decoration: none
+    color: #000
+  h2
     font-size: 36px
     line-height: 44px
-    font-weight: normal
-    background: linear-gradient(160deg, #FB5F5F 0%, #6241FF 49.34%, #5987F0 100%)
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #FB5F5F;
-
-  .me__about
+.slide__content__text
     font-size: 14px
     line-height: 17px
     color: $gray_text
 
+
+/* ============ Form ============ */
+
+.slide__form 
+  width: 64%
+  height: 100%
+  form
+    height: 100%
+
+.slide__form__group
+  display: flex
+  height: 100%
+  align-self: center
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  .input
+    width: 50%
+    border: none
+    border-bottom: 1px solid #000
+    padding: 10px 13px
+    font-family: $mons
+    font-size: 14px
+    line-height: 17px
+    margin-bottom: 25px
+    &:last-of-type
+      margin-bottom: 56px
+
+.button
+  border: none
+  cursor: pointer
+  width: 50%
+  background-color: #000
+  color: #fff
+  display: flex
+  justify-content: center
+  align-items: center
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 14px
+  padding: 20px 0
+    

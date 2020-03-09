@@ -7,6 +7,17 @@ ul {
   margin: 0;
   padding: 0; }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input:focus {
+  outline: none; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
 body {
   height: 100vh;
   position: relative;
@@ -14,15 +25,16 @@ body {
   flex-direction: column;
   justify-content: space-between; }
 
+.container {
+  margin: 0 50px;
+  display: flex;
+  height: 100%;
+  /* ============ Header ============ */ }
+
 .header {
   width: 100%;
   font-family: "Montserrat", sans-serif;
   font-size: 16px; }
-
-.container {
-  margin: 0 50px;
-  display: flex;
-  height: 100%; }
 
 .logo {
   margin-top: 25px;
@@ -83,12 +95,14 @@ body {
       height: 20px;
       object-fit: contain; }
 
+/* ============ Main ============ */
 main {
   height: 100%; }
 
+/* ============ Slider ============ */
 .slider {
   position: relative;
-  height: 540px;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -103,7 +117,8 @@ main {
     border-color: transparent #8798ab transparent transparent;
     margin-right: 22.5px;
     cursor: pointer;
-    margin-bottom: 20px; }
+    margin-bottom: 70px;
+    z-index: 1; }
   .slider .next {
     width: 0;
     height: 0;
@@ -112,7 +127,8 @@ main {
     border-color: transparent transparent transparent #000;
     margin-left: 22.5px;
     cursor: pointer;
-    margin-bottom: 20px; }
+    margin-bottom: 70px;
+    z-index: 1; }
 
 .slider__container {
   position: absolute;
@@ -120,15 +136,19 @@ main {
   left: 0;
   display: flex;
   width: 400%;
+  height: 100%;
   transition: left .9s ease; }
 
+/* ============ Slide ============ */
 .slide {
   box-sizing: border-box;
-  height: 484px;
+  height: 80%;
   display: flex;
   justify-content: center;
   width: 25%;
-  border: 2px solid #d7d7d7; }
+  border: 2px solid #d7d7d7;
+  position: relative;
+  font-family: "Montserrat", sans-serif; }
   .slide.hello {
     border: none; }
     .slide.hello .photo {
@@ -136,6 +156,8 @@ main {
       border-left: none; }
       .slide.hello .photo:last-child {
         border-left: none; }
+      .slide.hello .photo:first-child {
+        transform: rotateX(2px); }
   .slide .photo {
     box-sizing: border-box;
     width: 32%;
@@ -143,14 +165,26 @@ main {
     justify-content: center;
     align-items: center;
     padding: 30px; }
-    .slide .photo:last-child {
+    .slide .photo:last-of-type {
       border-left: 2px solid #d7d7d7; }
     .slide .photo img {
       width: 100%;
       height: 100%;
       object-fit: contain; }
+  .slide .watch {
+    display: block;
+    position: absolute;
+    left: 75px;
+    bottom: -7px;
+    background-color: #fff;
+    padding: 0 15px;
+    z-index: 1;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8c8b8b;
+    text-decoration: none; }
 
-.me {
+.slide__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,7 +192,7 @@ main {
   width: 515px;
   margin-right: 15px;
   margin-left: 35px; }
-  .me h1 {
+  .slide__content.me h1 {
     font-size: 36px;
     line-height: 44px;
     font-weight: normal;
@@ -166,7 +200,54 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #FB5F5F; }
-  .me .me__about {
+  .slide__content a {
+    text-decoration: none;
+    color: #000; }
+  .slide__content h2 {
+    font-size: 36px;
+    line-height: 44px; }
+
+.slide__content__text {
+  font-size: 14px;
+  line-height: 17px;
+  color: #8c8b8b; }
+
+/* ============ Form ============ */
+.slide__form {
+  width: 64%;
+  height: 100%; }
+  .slide__form form {
+    height: 100%; }
+
+.slide__form__group {
+  display: flex;
+  height: 100%;
+  align-self: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .slide__form__group .input {
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 10px 13px;
+    font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 17px;
-    color: #8c8b8b; }
+    margin-bottom: 25px; }
+    .slide__form__group .input:last-of-type {
+      margin-bottom: 56px; }
+
+.button {
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 20px 0; }
