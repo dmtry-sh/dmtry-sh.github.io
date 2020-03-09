@@ -202,8 +202,12 @@ main {
     color: #FB5F5F; }
   .slide__content a {
     text-decoration: none;
+<<<<<<< HEAD
     color: #000; }
   .slide__content h2 {
+=======
+    color: #000;
+>>>>>>> d4ff09f87599152a936f3375396669532705ad5e
     font-size: 36px;
     line-height: 44px; }
 
