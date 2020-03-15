@@ -1,15 +1,36 @@
 import React, { Component } from 'react';
 import './App.css';
-import { moviesData } from './moviesData';
+//import { moviesData } from './moviesData';
 import MovieItem from './MovieItem';
+import MovieTabs from './MovieTabs';
+import { API_URL, API_KEY_3 } from '../utils/api';
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      movies: moviesData,
-      moviesWillWatch: []
+      movies: [],
+      moviesWillWatch: [],
+      sort_by: 'popularity.desc'
+    }
+  }
+
+  getMovies = () => {
+    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({movies: data.results});
+      })
+  }
+
+  componentDidMount() {
+    this.getMovies();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.sort_by !== this.state.sort_by) {
+      this.getMovies();
     }
   }
 
@@ -48,11 +69,20 @@ class App extends Component {
 
   }
 
+  updateSortBy = value => {
+    this.setState({sort_by: value});
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row mt-4">
           <div className="col-9">
+            <div className="row mb-4">
+              <div className="col-12">
+                <MovieTabs sort_by={this.state.sort_by} updateSortBy={this.updateSortBy} />
+              </div>
+            </div>
             <div className="row">
               {this.state.movies.map(movie => {
                 return (
@@ -68,7 +98,17 @@ class App extends Component {
             </div>
           </div>
           <div className="col-3">
-            <p>Will watch: {this.state.moviesWillWatch.length}</p>
+          <h4>Will Watch: {this.state.moviesWillWatch.length} movies</h4>
+            <ul className="list-group">
+              {this.state.moviesWillWatch.map(movie => (
+                <li key={movie.id} className="list-group-item">
+                  <div className="d-flex justify-content-between">
+                    <p>{movie.title}</p>
+                    <p>{movie.vote_average}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
