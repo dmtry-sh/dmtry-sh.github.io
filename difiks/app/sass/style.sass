@@ -28,7 +28,6 @@ input[type=number]
 
 
 body
-  height: 100vh
   position: relative
   display: flex
   flex-direction: column
@@ -37,6 +36,10 @@ body
 .container
   margin: 0 50px
   display: flex
+  height: 100%
+
+.container--small
+  margin: 0 235px
   height: 100%
 
 
@@ -118,8 +121,43 @@ body
 
 
 /* ============ Main ============ */
-main
-  height: 100%
+.home
+  height: 75vh
+
+/* ============ About ============ */
+
+.about
+  .container--small
+    display: flex
+    justify-content: space-between
+    font-family: $mons
+    color: $gray_text
+    font-size: 14px
+    margin-top: 80px
+    margin-bottom: 100px
+
+.about
+  .col
+    display: flex
+    flex-direction: column
+    width: 460px
+  img
+    width: 460px
+    height: 579px
+    object-fit: cover
+  .col__text
+    margin: 50px 0
+    text-align: justify
+
+.about__header
+  color: #000000
+  font-weight: bold
+  font-size: 36px
+  line-height: 44px
+  margin: 0
+
+  
+
 
 /* ============ Slider ============ */
   
@@ -140,7 +178,7 @@ main
     border-color: transparent #8798ab transparent transparent
     margin-right: 22.5px
     cursor: pointer
-    margin-bottom: 70px
+    margin-bottom: 50px
     z-index: 1
   .next
     width: 0
@@ -150,7 +188,7 @@ main
     border-color: transparent transparent transparent #000
     margin-left: 22.5px
     cursor: pointer
-    margin-bottom: 70px
+    margin-bottom: 50px
     z-index: 1
 
 .slider__container
