@@ -27,7 +27,7 @@ let currSlide = 0;
 const container = document.querySelector('.slider__container');
 const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
-const offset = container.parentNode.offsetWidth;
+let offset = container.parentNode.offsetWidth;
 
 prev.addEventListener('click', () => {
     prevSlide();
