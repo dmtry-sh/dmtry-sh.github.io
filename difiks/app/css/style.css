@@ -33,9 +33,9 @@ body {
 
 .container--small {
   margin: 0 235px;
-  height: 100%;
-  /* ============ Header ============ */ }
+  height: 100%; }
 
+/* ============ Header ============ */
 .header {
   width: 100%;
   font-family: "Montserrat", sans-serif;
@@ -59,6 +59,12 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 40px; }
+
+#menu-toggle {
+  display: none; }
+
+.burger-label {
+  display: none; }
 
 .nav-list {
   align-self: center;
@@ -414,7 +420,7 @@ main.photo .container {
 .right-block {
   width: 690px; }
 
-@media screen and (min-width: 1601px) {
+@media (min-width: 1601px) {
   .container {
     width: 1600px;
     margin: 0 auto; }
@@ -426,7 +432,7 @@ main.photo .container {
     .about .col img {
       width: 100%; } }
 
-@media screen and (min-width: 960px) and (max-width: 1440px) {
+@media (min-width: 960px) and (max-width: 1440px) {
   .about .col {
     width: 100%;
     margin-right: 25px; }
@@ -434,13 +440,13 @@ main.photo .container {
     width: 100%;
     height: 479px; }
   .container--small {
-    margin: 0 100px; }
+    margin: 0 200px; }
   .slide.category .slide__content {
     margin-left: 60px; }
     .slide.category .slide__content p {
       padding-right: 0; } }
 
-@media screen and (min-width: 960px) and (max-width: 1280px) {
+@media (min-width: 960px) and (max-width: 1280px) {
   .left-block {
     width: 40%; }
   .right-block {
@@ -454,3 +460,109 @@ main.photo .container {
       width: 100%; }
   .slide__content {
     width: 315px; } }
+
+@media (min-width: 576px) and (max-width: 959px) {
+  .burger-label {
+    display: block;
+    width: 30px;
+    height: 20px;
+    order: 1; }
+  .burger-container {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 12;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; }
+    .burger-container .bar {
+      padding: 0;
+      height: 4px;
+      background-color: #000;
+      display: block;
+      border-radius: 4px;
+      transition: all 0.4s ease-in-out;
+      position: absolute;
+      border-radius: 5px; }
+  .bar1 {
+    top: 0;
+    width: 30px; }
+  .bar2,
+  .bar3 {
+    top: 13.5px; }
+  .bar2 {
+    right: 0;
+    width: 25px;
+    transition: width ease 0.4s ease-in-out; }
+  .bar3 {
+    right: 0;
+    width: 25px;
+    transition: width ease 0.4s ease-in-out; }
+  .bar4 {
+    bottom: 0;
+    right: 0;
+    width: 20px; }
+  #menu-toggle:checked + label > .burger-container {
+    position: fixed; }
+  #menu-toggle:checked + label > .burger-container > .bar1 {
+    transform: translateX(40px);
+    background-color: transparent;
+    width: 0; }
+  #menu-toggle:checked + label > .burger-container > .bar2 {
+    transform: rotate(45deg);
+    width: 30px; }
+  #menu-toggle:checked + label > .burger-container > .bar3 {
+    transform: rotate(-45deg);
+    width: 30px; }
+  #menu-toggle:checked + label > .burger-container > .bar4 {
+    transform: translateX(-40px);
+    background-color: transparent;
+    width: 0; }
+  .container {
+    margin: 0 25px; }
+  .height-container {
+    height: auto; }
+  .slider__container {
+    position: initial;
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    .slider__container .slide {
+      height: auto;
+      width: 100%-in-out;
+      display: flex;
+      flex-direction: column; }
+  .logo {
+    margin-top: 0;
+    min-width: 140px; }
+  .header nav {
+    margin-top: 0;
+    justify-content: flex-end; }
+  .nav-list {
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    right: -100%;
+    transition: all .4s ease;
+    background-color: #fff;
+    -webkit-box-shadow: -2px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -2px 0px 10px 0px rgba(0, 0, 0, 0.75); }
+    .nav-list .nav-item {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      font-size: 22px;
+      padding: 12px 35px 10px; }
+      .nav-list .nav-item a {
+        color: #000; }
+      .nav-list .nav-item:first-child {
+        margin-top: 80px; }
+  #menu-toggle:checked ~ .nav-list {
+    right: 0; } }

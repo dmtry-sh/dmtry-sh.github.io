@@ -48,3 +48,18 @@ let scrollListener = new WheelIndicator({
         }
     }
 })
+
+let scrollIsListening = true;
+if (document.documentElement.clientWidth < 960) {
+    scrollListener.turnOff();
+    scrollIsListening = false;
+}
+
+window.addEventListener('resize', () => {
+    if (scrollIsListening && document.documentElement.clientWidth < 960) {
+        scrollListener.turnOff();
+    }
+    if (!scrollIsListening && document.documentElement.clientWidth >= 960) {
+        scrollListener.turnOn();
+    }
+})
