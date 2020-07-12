@@ -461,7 +461,7 @@ main.photo .container {
   .slide__content {
     width: 315px; } }
 
-@media (min-width: 576px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .burger-label {
     display: block;
     width: 30px;
@@ -660,3 +660,9 @@ main.photo .container {
     margin-top: 40px; }
     .footer a:last-child {
       margin-right: 0; } }
+
+@media (max-width: 576px) {
+  .slide.category .slide__content p {
+    padding-right: 25px; }
+  .main.photo .container .right-block .block__text p {
+    font-size: unset; } }
