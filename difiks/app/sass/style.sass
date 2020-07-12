@@ -465,7 +465,7 @@ main.photo
         width: 100%
 
 
-@media (min-width: 960px) and (max-width: 1440px)
+@media (min-width: 1024px) and (max-width: 1440px)
   .about
     .col
       width: 100%
@@ -483,7 +483,7 @@ main.photo
       p
         padding-right: 0
 
-@media (min-width: 960px) and (max-width: 1280px)
+@media (min-width: 1025px) and (max-width: 1280px)
   .left-block
     width: 40%
 
@@ -502,7 +502,7 @@ main.photo
     width: 315px
 
 
-@media (min-width: 576px) and (max-width: 959px)
+@media (min-width: 576px) and (max-width: 1024px)
 
   .burger-label
     display: block
@@ -579,18 +579,53 @@ main.photo
 
   .height-container
     height: auto
+
+  .slider
+    justify-content: unset
+    .prev,
+    .next
+      display: none
       
   .slider__container
     position: initial
     width: 100%
-    display: flex
     flex-direction: column
 
     .slide
       height: auto
-      width: 100%-in-out
+      width: 100%
       display: flex
       flex-direction: column
+      border: none
+      &:first-child
+        .slide__content
+          width: 100%
+          margin-left: 0
+          margin-right: 0
+          padding: 32vh 0
+      .slide__content
+        box-sizing: border-box
+        width: 100%
+        margin-left: 0
+        margin-right: 0
+        padding: 20px 0 40px
+      .photo
+        border: none
+        padding: 0
+        margin-top: 20px
+        width: 100%
+        order: 1
+      .watch
+        position: unset
+        padding: 0
+
+  .slide__form
+    width: 100%
+    .input
+      width: 100%
+    .button
+      width: 100%
+
 
   .logo
     margin-top: 0
@@ -629,4 +664,85 @@ main.photo
   
   #menu-toggle:checked ~ .nav-list
     right: 0
+
+  .about .container--small
+    margin: 50px 25px 0
+    font-size: 21px
+    flex-direction: column
+    .col:first-child
+      order: 1
+    .col
+      width: 100%
+    img
+      height: auto
+      width: 100%
+  
+  .height-container
+    .container
+      flex-direction: column
+
+  .category-description
+    width: 100%
+    height: 50vh
+
+  .slider.category
+    flex-direction: column
+
+  .slide.category
+    .slide__photo-link
+      order: 1
+      img.slide__main-photo
+        width: 90%
+  
+  .slider__container .slide:first-child .slide__content
+    padding: 20px 0 40px
+
+  .slider__container .slide.hello .slide__content.me
+    padding: 41vh 0
+
+  
+
+  .main.photo
+    .container
+      flex-direction: column
+      padding-top: 50px
+      .left-block,
+      .right-block
+        width: 100%
+        margin: 0
+        .block__img--half,
+        .block__img--big-half
+          width: 100%
+          height: auto
+        
+      .left-block
+        order: 1
+
+      .right-block
+        display: flex
+        flex-direction: column
+        .block__img--half
+          order: 1
+          margin-bottom: 25px
+        .block__img--big-half
+          order: 3
+        .block__text
+          order: 2
+          margin-bottom: 30px
+          h1
+            margin-bottom: 19px
+          h2
+            font-size: 36px
+          p
+            padding-right: 50px
+            font-size: 21px
+
+
+    
+
+  .footer
+    justify-content: center
+    margin-top: 40px
+    a:last-child
+      margin-right: 0
 
