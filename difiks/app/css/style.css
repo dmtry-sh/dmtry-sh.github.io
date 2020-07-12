@@ -655,6 +655,9 @@ main.photo .container {
         .main.photo .container .right-block .block__text p {
           padding-right: 50px;
           font-size: 21px; }
+  .burger-container:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent; }
   .footer {
     justify-content: center;
     margin-top: 40px; }
